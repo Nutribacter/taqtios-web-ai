@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const pulse: Template = {
   slug: "pulse",
   name: "Pulse",
-  category: "Fitness",
-  style: "Bold / Energetic",
-  tags: ["Fitness", "Bold", "Energetic"],
+  category: "Gimnasios",
+  style: "Audaz / Enérgico",
+  tags: ["Gimnasio", "Audaz", "Enérgico"],
   status: "ready",
   featured: false,
   previewImage: "/templates/pulse/cover.jpg",
@@ -16,28 +16,28 @@ export const pulse: Template = {
       type: "master",
       title: "Prompt Maestro — Pulse",
       description: "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en landings de gimnasios y estudios de entrenamiento, con el nivel de las mejores marcas boutique de fitness.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [GYM_NAME], un [DESCRIBIR: gimnasio funcional, estudio de yoga, box de crossfit, etc.] en [CIUDAD]. Reemplazá cada corchete con mi información real; nunca inventes horarios, precios ni instructores.
 
-OBJECTIVE
+OBJETIVO
 Que alguien que está evaluando empezar a entrenar sienta la energía del lugar en los primeros segundos y agende una clase de prueba sin fricción.
 
-TARGET AUDIENCE
+AUDIENCIA
 Gente que ya decidió que quiere empezar a entrenar pero todavía no eligió dónde — compara 2-3 lugares por redes/Google antes de ir presencialmente.
 
-BRAND
+MARCA
 Nombre: [GYM_NAME]. Tono: directo, motivador sin ser gritón ("VENÍ Y ROMPELA" queda mal si no es literalmente esa la marca). Paleta: fondo oscuro o muy contrastado, UN color de acento vibrante (no dos compitiendo), tipografía gruesa y condensada para títulos.
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Fotografía de acción real (gente entrenando, no stock genérico de sonrisas perfectas) a página completa en el hero. Tipografía como fuerza: títulos grandes, gruesos, en mayúsculas donde tenga sentido. Contraste alto entre texto y fondo para que se lea la energía incluso en un vistazo rápido en el celular.
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav (logo + Clases + Horarios + CTA) → Hero con foto de acción + propuesta + CTA a clase de prueba → Disciplinas/clases (cards con nombre, nivel, duración) → Horarios (grilla filtrable por día) → Instructores (foto + nombre + especialidad) → Planes → CTA final con dirección y horario de atención.
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero: foto de acción real a página completa, headline corto y directo ("Entrená en serio" o similar), CTA "Reservá tu clase de prueba".
 2. Disciplinas: cards por tipo de clase (funcional, fuerza, movilidad, etc.) con nivel de intensidad y duración.
 3. Horarios: grilla semanal, filtrable por día de la semana, cada clase con su horario y disciplina.
@@ -45,31 +45,31 @@ PAGE STRUCTURE
 5. Planes: 2-3 opciones claras (mensual, trimestral, clase suelta) con lo que incluye cada uno.
 6. CTA final: dirección, horario de atención, botón de WhatsApp o reserva.
 
-COMPONENTS
+COMPONENTES
 Botón CTA: sólido, color de acento vibrante, texto en mayúsculas, sin ser un botón "gritón" con múltiples efectos — la energía la da la tipografía y la foto, no un botón con 5 animaciones.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Frases cortas y directas. Nombres de clase concretos (no "Clase Mágica de Transformación Total"). Los horarios y precios siempre exactos, nunca "consultar" si el dato existe.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 En mobile la grilla de horarios pasa de vista semanal completa a un selector de día + lista de clases de ese día (una grilla de 7 columnas no entra legible en 375px).
 
-ANIMATIONS
+ANIMACIONES
 Fade-up rápido (300ms, más rápido que el estándar — este template tiene energía) al entrar cada sección. Las cards de disciplina pueden tener un leve efecto de "empuje" al hover (translateY -4px + sombra). Nada de parallax pesado que ralentice el scroll — la sensación tiene que ser ágil.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste alto por diseño (fondo oscuro + texto claro), pero verificar que el color de acento sobre el fondo oscuro pase 4.5:1 si se usa en texto (no solo en botones grandes donde el mínimo es 3:1).
 
 SEO
 Title: "[GYM_NAME] — [DISCIPLINA] en [CIUDAD]". Schema.org tipo LocalBusiness o ExerciseGym con dirección y horarios.
 
-PERFORMANCE
+RENDIMIENTO
 La foto de acción del hero es el elemento más pesado: WebP/AVIF con compresión que mantenga nitidez del movimiento, dimensiones explícitas.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 Schema.org LocalBusiness en JSON-LD con horarios de atención reales.
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿Se siente la energía del lugar con solo ver el hero? ¿Se puede encontrar el horario de una clase en menos de 10 segundos? ¿El acento se usa con fuerza pero sin saturar cada elemento de la página?`,
     },
     {

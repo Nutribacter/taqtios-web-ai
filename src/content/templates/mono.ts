@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const mono: Template = {
   slug: "mono",
   name: "Mono",
-  category: "Portfolio",
-  style: "Minimal / Editorial",
-  tags: ["Portfolio", "Minimal", "Editorial"],
+  category: "Portafolio",
+  style: "Minimalista / Editorial",
+  tags: ["Portafolio", "Minimalista", "Editorial"],
   status: "ready",
   featured: false,
   previewImage: "/templates/mono/cover.jpg",
@@ -17,58 +17,58 @@ export const mono: Template = {
       title: "Prompt Maestro — Mono",
       description:
         "El prompt principal: genera el portfolio completo. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en portfolios minimalistas de diseñadores y creativos independientes, con el nivel de los mejores portfolios premiados en Awwwards en la categoría "minimal".
 
-CONTEXT
+CONTEXTO
 Voy a construir el portfolio de [NAME], [DISCIPLINA: diseñador/a de producto, ilustrador/a, fotógrafo/a, developer creativo/a, etc.]. Reemplazá cada corchete con mi información real; si falta un dato, dejalo como [FALTA: ...] en vez de inventarlo.
 
-OBJECTIVE
+OBJETIVO
 Que quien visite el sitio (un cliente potencial o un reclutador) entienda en segundos el nivel de trabajo de [NAME] viendo 3-4 proyectos bien mostrados, sin tener que leer una biografía larga primero.
 
-TARGET AUDIENCE
+AUDIENCIA
 Clientes o reclutadores que revisan 10-15 portfolios en una sesión y descartan rápido los que se ven sobrecargados o los que esconden el trabajo detrás de animaciones innecesarias.
 
-BRAND
+MARCA
 Nombre: [NAME]. Tono: seguro y directo, en primera persona. Paleta: monocromática (blanco/negro/grises) con máximo un acento de color usado con extrema moderación — el nombre del template lo dice: "Mono".
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Una sola columna central (max-width acotado, ej. 720-960px), todo el contenido fluye verticalmente sin sidebars ni grids complejos. Tipografía como protagonista: buena escala tipográfica, buen interlineado, nada de decoración. El trabajo se muestra con imágenes grandes intercaladas con texto breve, como un ensayo bien diseñado, no como una galería de tarjetas.
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Header simple (nombre + 2-3 links: Trabajo, Sobre mí, Contacto) → Intro breve (una o dos oraciones sobre quién es y qué hace) → Proyectos (cada uno con imagen(es), título, una descripción corta y el rol/herramientas) → Sobre mí (párrafo breve, sin biografía extensa) → Contacto (mail + 1-2 redes, nada más).
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Intro: nombre en tipografía grande + una línea que dice qué hace ("Diseño producto para startups B2B" en vez de "Soy un apasionado diseñador multidisciplinario").
 2. Proyectos: cada uno con su imagen o secuencia de imágenes a ancho de columna, título del proyecto, una descripción de 1-2 oraciones (qué se hizo, para quién) y el rol/herramientas en texto chico.
 3. Sobre mí: un párrafo de 3-4 oraciones, sin foto de perfil obligatoria (opcional, chica, circular, si el creativo la quiere).
 4. Contacto: mail clickeable grande + links a 1-2 redes relevantes (no una fila de 8 iconos sociales).
 
-COMPONENTS
+COMPONENTES
 Sin cards con sombra ni bordes redondeados llamativos — las imágenes van a sangre de la columna o con un margen mínimo. Los links de contacto llevan underline simple, sin botones grandes.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Descripciones de proyecto concretas: qué se hizo, para quién, con qué resultado si lo hay — nunca "un proyecto muy interesante en el que exploré varias posibilidades creativas".
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 La columna central se ajusta con padding lateral generoso en mobile (nunca el texto pegado a los bordes de la pantalla). Las imágenes de proyecto mantienen su proporción original, sin recortes forzados.
 
-ANIMATIONS
+ANIMACIONES
 Fade-up muy sutil al entrar cada proyecto en viewport. Nada más — este template se apoya en la calidad de la tipografía y las imágenes, no en el movimiento. Cualquier animación de más compite con la sobriedad que pide el nombre "Mono".
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste alto por defecto (paleta monocromática ya lo favorece); cuidar que el único acento de color también cumpla 4.5:1 si se usa en texto.
 
 SEO
 Title: "[NAME] — [DISCIPLINA]". Meta description con una línea sobre el tipo de trabajo. Si cada proyecto tiene su propia URL, título y descripción específicos por proyecto.
 
-PERFORMANCE
+RENDIMIENTO
 Las imágenes de proyecto con dimensiones explícitas y lazy loading debajo del fold — en un portfolio minimalista, un salto de layout por una imagen sin dimensiones se nota mucho más que en un sitio recargado.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 HTML semántico simple, cero dependencias de animación pesadas — este template debería poder construirse casi sin JavaScript.
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿Se entiende el nivel de trabajo con solo scrollear, sin leer nada? ¿Hay algún elemento decorativo que no aporte nada y se pueda sacar? ¿La tipografía sola sostiene la sensación de calidad?`,
     },
     {

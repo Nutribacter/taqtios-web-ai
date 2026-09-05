@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const primeEstate: Template = {
   slug: "prime-estate",
   name: "Prime Estate",
-  category: "Real Estate",
-  style: "Luxury / Architectural",
-  tags: ["Real Estate", "Luxury", "Architectural"],
+  category: "Inmobiliarias",
+  style: "Lujo / Arquitectónico",
+  tags: ["Inmobiliaria", "Lujo", "Arquitectónico"],
   status: "ready",
   featured: true,
   previewImage: "/templates/prime-estate/cover.jpg",
@@ -17,59 +17,59 @@ export const primeEstate: Template = {
       title: "Prompt Maestro — Prime Estate",
       description:
         "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en sitios de real estate de lujo, con el nivel de las mejores inmobiliarias boutique internacionales.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [PROPERTY_OR_AGENCY_NAME], para [DESCRIBIR: una propiedad puntual / un catálogo de propiedades / una inmobiliaria boutique]. Reemplazá cada corchete con mi información real; si un dato falta, dejalo como [FALTA: ...] — nunca inventes metros cuadrados, precios ni ubicaciones.
 
-OBJECTIVE
+OBJETIVO
 Que un comprador califically alto entienda en segundos el nivel de la propiedad/inmobiliaria y agende una visita o consulta — la fotografía arquitectónica hace la venta antes que cualquier texto.
 
-TARGET AUDIENCE
+AUDIENCIA
 Compradores o inversores de alto poder adquisitivo que evalúan pocas opciones muy cuidadosamente; desconfían de sitios que se ven como un portal de clasificados genérico.
 
-BRAND
+MARCA
 Nombre: [PROPERTY_OR_AGENCY_NAME]. Tono: seguro, discreto, nunca vendedor agresivo ("¡OPORTUNIDAD ÚNICA!"). Paleta: tonos neutros arquitectónicos (piedra, arena, carbón), un acento metálico sutil (dorado apagado o bronce) usado con moderación extrema.
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 La fotografía arquitectónica manda: fotos a página completa, sin recortes forzados, con composición que respete las líneas del edificio. Tipografía serif o sans elegante de trazo fino para títulos — nada de fuentes gruesas o "corporativas". Mucho espacio negativo entre secciones, ritmo pausado (esto no es una landing de conversión rápida tipo SaaS, es una landing de decisión lenta y reflexiva).
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav discreto (logo + Propiedades + Contacto) → Hero con foto arquitectónica hero + nombre de la propiedad/inmobiliaria → Ficha técnica (metros, ambientes, ubicación) presentada como datos editoriales, no como tabla de portal inmobiliario → Galería de espacios (living, cocina, exterior, vista) → Ubicación con mapa discreto → Contacto directo (consulta breve, no formulario de 15 campos).
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero: foto arquitectónica de la fachada o el espacio más impactante, a página completa, con el nombre superpuesto en tipografía fina.
 2. Ficha técnica: los datos clave (m², ambientes, ubicación, año) presentados en un layout editorial — números grandes con su etiqueta chica debajo, no una tabla de filas y columnas.
 3. Galería: 4-6 fotos de los espacios principales, cada una con su propio momento (no un grid apretado de miniaturas).
 4. Ubicación: un mapa discreto (embed o estático) + 2-3 líneas sobre el barrio/zona, sin exagerar.
 5. Contacto: un formulario corto (nombre, email, teléfono, mensaje opcional) o un link directo a WhatsApp — nunca ambos compitiendo, elegir uno según lo que pida el dueño real.
 
-COMPONENTS
+COMPONENTES
 Botón de contacto: borde fino, fondo transparente por defecto, se llena con el acento metálico al hover — nunca un botón sólido gigante que grite "¡Comprá ahora!". Los datos de la ficha técnica van con números grandes en la tipografía de títulos y la etiqueta en versalitas chicas.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Frases descriptivas y concretas (ubicación real, superficie real, orientación), nunca "una oportunidad que no podés dejar pasar". El copy vende la propiedad describiéndola bien, no presionando.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 En mobile las fotos arquitectónicas mantienen su encuadre (nunca recortadas a un cuadrado que pierda la composición de la fachada). La ficha técnica pasa de una fila de números a una grilla de 2 columnas.
 
-ANIMATIONS
+ANIMACIONES
 Fade-up sutil al entrar cada sección. Zoom leve en la foto del hero (scale 1 a 1.03, muy lento, 10s+) para dar sensación de vida sin distraer. Nada de transiciones bruscas — el ritmo tiene que sentirse pausado y deliberado, como caminar por la propiedad.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste 4.5:1 en todo texto sobre las fotos (usar overlays de gradiente, nunca oscurecido parejo). El mapa y el formulario de contacto totalmente navegables por teclado.
 
 SEO
 Title: "[PROPERTY_OR_AGENCY_NAME] — [UBICACIÓN]". Meta description con la propuesta de valor de la propiedad/inmobiliaria. Schema.org tipo RealEstateListing si es una propiedad puntual, con precio, ubicación y características si corresponde hacerlo público.
 
-PERFORMANCE
+RENDIMIENTO
 Las fotos arquitectónicas son pesadas por naturaleza: WebP/AVIF con compresión que preserve el detalle (esto es lo que vende), dimensiones explícitas, lazy loading en todo menos el hero.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 HTML semántico, mapa embebido con carga diferida (no bloquear el render inicial por un iframe de mapa pesado).
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿Las fotos venden la propiedad o se ven como cualquier portal de clasificados? ¿Los datos técnicos se leen rápido o hay que buscarlos en un párrafo? ¿El tono se siente exclusivo sin sentirse pomposo o falso?`,
     },
     {

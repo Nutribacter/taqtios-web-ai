@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const vital: Template = {
   slug: "vital",
   name: "Vital",
-  category: "Healthcare",
-  style: "Clean / Trustworthy",
-  tags: ["Healthcare", "Clean", "Trustworthy"],
+  category: "Salud",
+  style: "Limpio / Confiable",
+  tags: ["Salud", "Limpio", "Confiable"],
   status: "ready",
   featured: false,
   previewImage: "/templates/vital/cover.jpg",
@@ -16,28 +16,28 @@ export const vital: Template = {
       type: "master",
       title: "Prompt Maestro — Vital",
       description: "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en sitios de salud (clínicas, consultorios, telemedicina), con criterio ético sobre qué se puede prometer y qué no en el rubro salud.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [PRACTICE_NAME], [DESCRIBIR: consultorio de una especialidad, clínica, servicio de telemedicina]. Reemplazá cada corchete con mi información real; nunca inventes especialidades, credenciales ni resultados médicos.
 
-OBJECTIVE
+OBJETIVO
 Que un paciente potencial entienda qué servicio se ofrece, confíe en la seriedad del lugar/profesional, y saque un turno sin fricción.
 
-TARGET AUDIENCE
+AUDIENCIA
 Pacientes buscando atención en [ESPECIALIDAD], muchas veces con algo de ansiedad por el motivo de consulta — el diseño tiene que transmitir calma y profesionalismo, no venta agresiva.
 
-BRAND
+MARCA
 Nombre: [PRACTICE_NAME]. Tono: cálido pero profesional, nunca alarmista ni con promesas de cura. Paleta: colores claros y calmos (celestes, verdes suaves, blancos), nada de rojos alarmantes salvo en alertas reales de emergencia.
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Claridad ante todo: tipografía muy legible, jerarquía simple, nada de elementos que compliquen encontrar el botón de sacar turno. Fotografía real del profesional/equipo si existe (nunca stock genérico de "doctor sonriendo con estetoscopio" si no es foto real).
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav (logo + Servicios + Turnos + Contacto) → Hero con propuesta + CTA de turno → Servicios/especialidades (lista clara) → Sobre el profesional/equipo (credenciales reales) → Cómo funciona la consulta (presencial/telemedicina, pasos) → Obra sociales/formas de pago aceptadas → Turnos (calendario o formulario) → Contacto y ubicación.
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero: propuesta clara ("Atención en [ESPECIALIDAD], turnos en 48hs"), CTA "Sacar turno".
 2. Servicios: lista de lo que se atiende, sin prometer resultados ("tratamos" en vez de "curamos").
 3. Profesional/equipo: foto real, credenciales verificables (matrícula, especialización), sin exagerar experiencia.
@@ -46,31 +46,31 @@ PAGE STRUCTURE
 6. Turnos: formulario o link a sistema de reserva externo.
 7. Contacto: dirección, teléfono, horarios de atención.
 
-COMPONENTS
+COMPONENTES
 Botón de "Sacar turno": el CTA más visible de toda la página, presente en el nav sticky. Cards de servicio simples, sin iconografía médica genérica de banco de imágenes (jeringas, cruces rojas) salvo que aporte claridad real.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Lenguaje claro, sin jerga médica innecesaria. Nunca prometer resultados de tratamiento ("mejorá tu problema" en vez de "solucionamos tu problema para siempre"). Las credenciales (matrícula, título) siempre reales y verificables.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 El botón de "Sacar turno" accesible sin scrollear en el hero, y como CTA sticky en mobile si la página es larga.
 
-ANIMATIONS
+ANIMACIONES
 Fade-up muy sutil al entrar cada sección — el tono calmo de salud no pide movimiento llamativo. Nada de animaciones agresivas o que se sientan "de venta".
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste alto (crítico en salud, donde puede haber pacientes con baja visión). Formulario de turnos completamente accesible por teclado y con lector de pantalla, labels claros en cada campo.
 
 SEO
 Title: "[PRACTICE_NAME] — [ESPECIALIDAD] en [CIUDAD]". Schema.org tipo MedicalBusiness o Physician con dirección, especialidad y horarios — esto es lo que hace aparecer en búsquedas locales de salud.
 
-PERFORMANCE
+RENDIMIENTO
 Página liviana, fotos del profesional/equipo optimizadas si existen.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 Schema.org MedicalBusiness/Physician en JSON-LD. Si hay formulario de datos de salud, considerar que cualquier dato sensible no se guarde sin el consentimiento y la seguridad correspondiente — marcar esto como [FALTA: revisar cumplimiento de privacidad de datos de salud] si aplica en tu país.
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿Se puede sacar un turno en menos de 3 clics? ¿Hay alguna promesa de resultado médico que no se puede sostener? ¿El tono transmite calma y profesionalismo, no venta?`,
     },
     {

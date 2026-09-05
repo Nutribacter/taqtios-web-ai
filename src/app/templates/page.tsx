@@ -6,26 +6,26 @@ import TiltedCard from "@/components/TiltedCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const ALL_FILTERS = [
-  "All",
+  "Todos",
   "SaaS",
-  "Agencies",
-  "Restaurants",
-  "Real Estate",
-  "Ecommerce",
-  "Professionals",
-  "Portfolio",
-  "Fitness",
-  "Hospitality",
+  "Agencias",
+  "Restaurantes",
+  "Inmobiliarias",
+  "Tiendas",
+  "Profesionales",
+  "Portafolio",
+  "Gimnasios",
+  "Hotelería",
   "Startups",
-  "Landing Pages",
-  "Healthcare",
-  "Education",
-  "Personal Brand",
-  "Finance",
-  "Beauty",
-  "Automotive",
-  "Construction",
-  "Creative Studios",
+  "Landings",
+  "Salud",
+  "Educación",
+  "Marca Personal",
+  "Finanzas",
+  "Belleza",
+  "Automotor",
+  "Construcción",
+  "Estudios Creativos",
 ];
 
 export default async function TemplatesPage({
@@ -33,9 +33,9 @@ export default async function TemplatesPage({
 }: {
   searchParams: Promise<{ categoria?: string; q?: string }>;
 }) {
-  const { categoria = "All", q = "" } = await searchParams;
+  const { categoria = "Todos", q = "" } = await searchParams;
   const templates = listReadyTemplates().filter((t) => {
-    const matchesCategory = categoria === "All" || t.category === categoria;
+    const matchesCategory = categoria === "Todos" || t.category === categoria;
     const needle = q.trim().toLowerCase();
     const matchesSearch =
       !needle ||
@@ -56,7 +56,7 @@ export default async function TemplatesPage({
           </h1>
           <p className="mt-2 text-muted-foreground">
             {templates.length} de {listReadyTemplates().length} diseños
-            {categoria !== "All" ? ` en ${categoria}` : ""}.
+            {categoria !== "Todos" ? ` en ${categoria}` : ""}.
           </p>
 
           <form className="mt-8" action="/templates">
@@ -67,7 +67,7 @@ export default async function TemplatesPage({
               placeholder="Buscá un template…"
               className="w-full rounded-lg border border-border bg-card px-4 py-3 text-sm outline-none focus:border-primary sm:max-w-sm"
             />
-            {categoria !== "All" && (
+            {categoria !== "Todos" && (
               <input type="hidden" name="categoria" value={categoria} />
             )}
           </form>
@@ -75,12 +75,12 @@ export default async function TemplatesPage({
           <div className="mt-6 flex flex-wrap gap-2">
             {ALL_FILTERS.map((c) => {
               const isActive = c === categoria;
-              const isDisabled = c !== "All" && !activeCategories.has(c);
+              const isDisabled = c !== "Todos" && !activeCategories.has(c);
               return (
                 <Link
                   key={c}
                   href={
-                    c === "All"
+                    c === "Todos"
                       ? "/templates"
                       : `/templates?categoria=${encodeURIComponent(c)}`
                   }

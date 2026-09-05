@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const casa: Template = {
   slug: "casa",
   name: "Casa",
-  category: "Restaurants",
-  style: "Editorial / Luxury",
-  tags: ["Restaurant", "Editorial", "Luxury"],
+  category: "Restaurantes",
+  style: "Editorial / Lujo",
+  tags: ["Restaurante", "Editorial", "Lujo"],
   status: "ready",
   featured: true,
   previewImage: "/templates/casa/cover.jpg",
@@ -17,59 +17,59 @@ export const casa: Template = {
       title: "Prompt Maestro — Casa",
       description:
         "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en sitios de restaurantes de alta gama, con el nivel de los mejores sitios de guías Michelin.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [RESTAURANT_NAME], un restaurante de cocina [TIPO_DE_COCINA] en [CIUDAD]. Reemplazá cada corchete con mi información real; si un dato falta, dejalo como [FALTA: ...] en vez de inventarlo — nunca inventes platos, precios ni horarios.
 
-OBJECTIVE
+OBJETIVO
 Que alguien que busca dónde comer esta noche entienda en 8 segundos el tipo de experiencia (informal/formal, precio aproximado, tipo de cocina) y llegue a reservar sin fricción — la reserva es la única conversión que importa.
 
-TARGET AUDIENCE
+AUDIENCIA
 Comensales que ya decidieron salir a comer algo especial y están comparando 3-4 opciones en su teléfono, caminando o en el auto — mobile es el contexto real de uso, no el desktop.
 
-BRAND
+MARCA
 Nombre: [RESTAURANT_NAME]. Tono: cálido pero no informal — se nota que hay cuidado sin caer en la pomposidad. Paleta: fondo cálido crema o piedra (nunca blanco frío de clínica), acento en un tono tierra u óxido, tipografía serif editorial para títulos (evoca menú impreso) + sans para textos funcionales (horarios, dirección).
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 La fotografía de comida es la protagonista absoluta: cada plato ocupa el ancho completo o la mitad de la pantalla, nunca un thumbnail chico. Composición con aire (nada de grillas apretadas de 4 columnas de fotos). El menú se presenta como tipografía editorial (nombre del plato + descripción breve + precio alineado a la derecha con puntos guía), nunca como una tabla de spreadsheet ni un PDF incrustado.
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav (logo + Menú + Reservar, sticky) → Hero con foto de plato hero + nombre + una frase → Filosofía/historia breve (2-3 oraciones, con foto del chef o del espacio) → Menú destacado (5-6 platos con foto) → Ambiente (galería de 3-4 fotos del espacio) → Reservas (horarios, ubicación, botón grande) → Footer con redes y contacto.
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero: foto de plato a página completa con overlay sutil para legibilidad, nombre del restaurante en serif grande, una frase que resume la propuesta (ej. "Cocina de mercado, fuego a leña").
 2. Historia: texto corto + una foto (del chef, del espacio o de un ingrediente), nunca un muro de texto.
 3. Menú destacado: cada plato con foto grande, nombre, descripción de una línea, precio — diseño tipo "página de menú de autor", no lista con viñetas.
 4. Ambiente: 3-4 fotos del espacio en un layout asimétrico (no grid perfecto de cuadrados iguales).
 5. Reservas: días y horarios claros, dirección con link a Maps, botón de reserva (a un sistema externo tipo OpenTable/Resy si corresponde, o WhatsApp si es un restaurante más chico).
 
-COMPONENTS
+COMPONENTES
 Botón de reservar: sólido, color de acento, esquinas apenas redondeadas (no pill completo — se siente más editorial con esquinas casi rectas). Los precios del menú van con puntos guía (....) entre el nombre del plato y el precio, técnica clásica de menú impreso.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Descripciones de plato cortas y sensoriales (ingrediente + técnica, no adjetivos vacíos tipo "delicioso"). El nombre del restaurante y su historia se cuentan en primera persona plural del equipo, sin exagerar.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 En mobile las fotos de plato siguen ocupando el ancho completo (nunca se recortan a un cuadrado forzado que pierda el plato de foco). El menú en mobile: nombre y precio pueden ir en la misma línea si el nombre es corto, o el precio baja a una segunda línea alineado a la derecha si el nombre es largo — nunca se superponen.
 
-ANIMATIONS
+ANIMACIONES
 Fade-up suave al entrar cada sección en viewport. Ligero zoom-in (scale 1 a 1.05 en 8s, loop) en la foto del hero, muy sutil, para que no se sienta una foto estática muerta. Nada de carruseles automáticos en el menú — el usuario tiene que poder leerlo a su ritmo.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 El overlay sobre la foto del hero tiene que garantizar 4.5:1 de contraste para el texto — probar con overlays de gradiente (transparente arriba, oscurecido abajo donde va el texto) en vez de un oscurecido parejo que le quite vida a la foto entera.
 
 SEO
 Title: "[RESTAURANT_NAME] — [TIPO_DE_COCINA] en [CIUDAD]". Meta description con la propuesta + ubicación. Schema.org tipo Restaurant con dirección, horarios y rango de precios — esto es lo que hace que Google muestre las estrellas y el horario en el resultado de búsqueda.
 
-PERFORMANCE
+RENDIMIENTO
 Las fotos de comida pesan: servir en WebP/AVIF con compresión agresiva mantiendo calidad visual, dimensiones explícitas para evitar layout shift, lazy loading en todo lo que esté debajo del fold. La foto del hero es la única que carga con prioridad alta.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 Schema.org Restaurant en JSON-LD. HTML semántico con las secciones de menú marcadas de forma que un lector de pantalla entienda "esto es un plato, esto es su precio".
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿Las fotos dan ganas de comer o se ven genéricas de banco de imágenes? ¿Se puede reservar en menos de 3 clics desde que se entra? ¿El menú se lee como una pieza de diseño o como una lista de Excel pegada?`,
     },
     {

@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const spark: Template = {
   slug: "spark",
   name: "Spark",
-  category: "Landing Pages",
-  style: "Punchy / Conversion",
-  tags: ["Landing Pages", "Conversion", "Product Launch"],
+  category: "Landings",
+  style: "Directo / Conversión",
+  tags: ["Landings", "Conversión", "Lanzamiento de producto"],
   status: "ready",
   featured: false,
   previewImage: "/templates/spark/cover.jpg",
@@ -16,28 +16,28 @@ export const spark: Template = {
       type: "master",
       title: "Prompt Maestro — Spark",
       description: "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior CRO Specialist + Frontend Engineer especializado en landing pages de un solo producto, con el nivel de las mejores páginas de lanzamiento de infoproductos y productos digitales.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [PRODUCT_NAME], un [DESCRIBIR: curso, ebook, producto físico, herramienta puntual]. Reemplazá cada corchete con mi información real; nunca inventes precio, garantía ni testimonios.
 
-OBJECTIVE
+OBJETIVO
 Que un visitante que llega desde un anuncio o un link entienda el beneficio central en segundos y compre sin necesitar navegar a ningún otro lado — es una landing de una sola página, un solo producto, un solo CTA.
 
-TARGET AUDIENCE
+AUDIENCIA
 [DESCRIBIR_AUDIENCIA] que ya tiene el problema que este producto resuelve y está comparando 2-3 opciones antes de decidir.
 
-BRAND
+MARCA
 Nombre: [PRODUCT_NAME]. Tono: directo, orientado a conversión sin ser agresivo tipo infoproducto de los 2010s (nada de countdown falso ni "solo hoy"). Paleta: un color de acento fuerte para el CTA, resto neutro.
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Cada sección resuelve UNA objeción o refuerza UN beneficio, en orden de lo más importante a lo menos. El CTA se repite cada 2-3 secciones (nunca solo al final, donde alguien convencido a mitad de página tendría que scrollear de vuelta).
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Hero con beneficio central + CTA → Para quién es / para quién no es (filtra visitantes que no van a comprar) → Qué incluye (lista concreta) → Cómo funciona/qué vas a lograr → Prueba social si existe (reseñas reales) → Precio y garantía → FAQ (objeciones reales) → CTA final.
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero: headline del beneficio central, subheadline, CTA principal, imagen del producto si es físico o mockup si es digital.
 2. Para quién es / no es: 2 columnas cortas que filtran a quien realmente lo necesita.
 3. Qué incluye: lista concreta de lo que se recibe, sin relleno.
@@ -46,31 +46,31 @@ PAGE STRUCTURE
 6. FAQ: objeciones reales que la gente pregunta antes de comprar.
 7. CTA final: repetir el beneficio central + botón de compra.
 
-COMPONENTS
+COMPONENTES
 Botón de CTA: el elemento más visible de cada sección donde aparece, color de acento consistente en todos los CTAs de la página (nunca cambiar el color del botón principal entre secciones, eso confunde).
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Cada objeción se nombra y se resuelve explícitamente ("¿Y si no tengo tiempo? Son 15 minutos por día."), nunca ignorada. Precio siempre claro, nunca "consultar".
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 El CTA sticky en mobile si la página es larga (un botón fijo abajo con el precio o la acción principal), para que nunca haya que buscar cómo comprar.
 
-ANIMATIONS
+ANIMACIONES
 Fade-up al entrar cada sección. El CTA puede tener un leve efecto de pulso sutil (no agresivo) para dirigir la atención, sin ser molesto con loops muy notorios.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste 4.5:1 en todo texto, especialmente en el precio y el CTA. FAQ en acordeón nativo (<details>) navegable por teclado.
 
 SEO
 Title y meta description con el beneficio central del producto. Schema.org Product con precio si corresponde publicarlo.
 
-PERFORMANCE
+RENDIMIENTO
 Página liviana, imágenes de producto optimizadas, sin librerías de countdown/urgencia falsa que además de ser deshonestas suman peso innecesario.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 Botón de compra conectado al sistema de pago que corresponda (Mercado Pago, Stripe, etc.), marcado como [FALTA: conectar pago] si todavía no está.
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿Cada objeción real tiene su respuesta en la página? ¿El CTA se repite lo suficiente sin ser invasivo? ¿Hay algún claim sin sustento (testimonio inventado, garantía que no existe)?`,
     },
     {

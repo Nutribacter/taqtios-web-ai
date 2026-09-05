@@ -4,8 +4,8 @@ export const novaAi: Template = {
   slug: "nova-ai",
   name: "Nova AI",
   category: "SaaS",
-  style: "Dark / Futuristic / Premium",
-  tags: ["SaaS", "AI", "Dark", "Premium"],
+  style: "Oscuro / Futurista / Premium",
+  tags: ["SaaS", "IA", "Oscuro", "Premium"],
   status: "ready",
   featured: true,
   previewImage: "/templates/nova-ai/cover.jpg",
@@ -17,28 +17,28 @@ export const novaAi: Template = {
       title: "Prompt Maestro — Nova AI",
       description:
         "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en landings de producto SaaS de IA, con el nivel de pulido de Linear, Vercel y Perplexity.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [PRODUCT_NAME], un producto de IA para [DESCRIBIR_QUE_HACE_EN_UNA_LINEA]. Reemplazá cada corchete con la info real de mi producto antes de generar nada; si algún dato no te lo doy, dejá el placeholder marcado como [FALTA: ...] en vez de inventarlo.
 
-OBJECTIVE
+OBJETIVO
 Que un visitante que nunca escuchó hablar de [PRODUCT_NAME] entienda en menos de 8 segundos qué hace, para quién es, y sienta que está viendo un producto ya validado — no una idea. La página tiene un solo objetivo de conversión: click en el CTA principal.
 
-TARGET AUDIENCE
+AUDIENCIA
 [BUYER_PERSONA] — gente que ya usa 2-3 herramientas de IA en su día a día y desconfía de una más si no ve, en los primeros segundos, qué problema puntual resuelve.
 
-BRAND
+MARCA
 Nombre: [PRODUCT_NAME]. Tono: seguro, directo, cero jerga de "revolucionario" o "disruptivo". Paleta: fondo casi negro (#0A0A0F), acento eléctrico único (violeta o cian, elegí uno y usalo con disciplina — nunca los dos compitiendo en el mismo elemento). Tipografía sans geométrica para títulos, una sans neutra para cuerpo.
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Oscuro no significa denso: dejá respirar cada sección con márgenes generosos (mínimo 96px verticales en desktop). El acento aparece en máximo 3 lugares por viewport: nunca lo uses para decorar, solo para señalar la acción o el dato que importa. Nada de partículas ni fondos 3D — el efecto "premium" lo da la tipografía y el espaciado, no el ruido visual.
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav (logo + 3 links + CTA) → Hero → Barra de logos de clientes/integraciones → Cómo funciona (3 pasos) → Demo en vivo simulada (screenshot real de la interfaz, no un mockup genérico) → Resultados/métricas → Testimonios (si hay reales; si no, sección "Para quién es" en su lugar) → Precios → FAQ → CTA final → Footer.
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero: headline de 6-9 palabras que nombra el resultado, no la tecnología. Subheadline de una oración que aclara el "cómo". CTA principal ("Empezar gratis" o el que corresponda) + CTA secundario de menor peso visual ("Ver cómo funciona"). A la derecha o abajo, un screenshot real de producto dentro de un browser frame, con una animación sutil de datos que se actualizan (no un video pesado).
 2. Barra de confianza: "Usado por equipos en [logos]" en escala de grises, color al hover.
 3. Cómo funciona: 3 pasos numerados (01/02/03), cada uno con un ícono lineal simple y una frase de máximo 12 palabras.
@@ -48,31 +48,31 @@ PAGE STRUCTURE
 7. FAQ: acordeón nativo (<details>), 5-6 preguntas reales sobre seguridad de datos, integración y facturación.
 8. CTA final: repetir el hero en una línea, sin nueva idea.
 
-COMPONENTS
+COMPONENTES
 Botón primario: fondo sólido en el color de acento, texto en el color de fondo (alto contraste), radio de 8px, sin sombra dura. Botón secundario: solo borde, transparente. Cards de precio: borde de 1px sutil, sin degradado en el borde. Inputs (si hay): fondo un tono más claro que el body, borde que se ilumina en foco.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Cada headline nombra un resultado ("Cerrá el mes 3 días antes"), nunca una capacidad ("Automatización inteligente de reportes"). CTA en imperativo corto. Nada de "revolucionario", "disruptivo", "líder del mercado" sin dato que lo sostenga.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 Mobile-first real, no "que no se rompa": en 375px el hero pasa a una columna, el screenshot va abajo del texto (nunca arriba tapando el headline), la barra de logos se convierte en carrusel horizontal con scroll-snap, las cards de precio se apilan con el plan destacado primero.
 
-ANIMATIONS
+ANIMACIONES
 Fade-up sutil al entrar en viewport (una sola vez, respetando prefers-reduced-motion). Hover en cards: elevación de 2-4px + sombra, sin escalar el contenido. Nada de scroll-jacking ni parallax pesado.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste mínimo 4.5:1 en todo texto sobre el fondo oscuro (el acento sobre negro suele fallar en texto chico — usarlo en texto grande o en fondos sólidos, nunca en texto de 14px). Navegación completa por teclado, foco visible en todos los interactivos.
 
 SEO
 Title y meta description específicos del producto (no genéricos), un solo <h1> (el headline del hero), Open Graph con imagen 1200x630 del screenshot de producto.
 
-PERFORMANCE
+RENDIMIENTO
 El screenshot del hero con dimensiones explícitas y lazy loading en todo lo que esté debajo del fold. Cero librerías de animación pesadas: CSS transitions alcanza para todo lo de esta página.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 HTML semántico (header/main/section/footer), CSS con custom properties para la paleta (para poder recolorear sin tocar cada regla), JavaScript mínimo (acordeón del FAQ y el nav mobile, nada más).
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 Antes de darlo por terminado, revisá: ¿el headline se entiende sin leer nada más? ¿el acento se usa con disciplina o está por todos lados? ¿funciona igual de bien en 375px que en 1440px? ¿hay algún claim sin dato real detrás?`,
     },
     {

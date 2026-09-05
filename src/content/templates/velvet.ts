@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const velvet: Template = {
   slug: "velvet",
   name: "Velvet",
-  category: "Ecommerce",
-  style: "Fashion / Luxury",
-  tags: ["Ecommerce", "Fashion", "Luxury"],
+  category: "Tiendas",
+  style: "Moda / Lujo",
+  tags: ["Tienda", "Moda", "Lujo"],
   status: "ready",
   featured: false,
   previewImage: "/templates/velvet/cover.jpg",
@@ -16,58 +16,58 @@ export const velvet: Template = {
       type: "master",
       title: "Prompt Maestro — Velvet",
       description: "El prompt principal: genera la tienda completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en ecommerce de moda de lujo, con el nivel de las mejores tiendas online de marcas premium independientes.
 
-CONTEXT
+CONTEXTO
 Voy a construir la tienda de [BRAND_NAME], una marca de [DESCRIBIR: indumentaria, calzado, accesorios]. Reemplazá cada corchete con mi información real; nunca inventes precios ni stock.
 
-OBJECTIVE
+OBJETIVO
 Que quien entra sienta que está en una tienda premium (no un dropshipping genérico) y llegue a agregar un producto al carrito guiado por fotografía de calidad, no por descuentos gritados.
 
-TARGET AUDIENCE
+AUDIENCIA
 Compradores que ya conocen marcas de indumentaria de nicho y distinguen rápido entre una tienda con identidad propia y un template de Shopify sin editar.
 
-BRAND
+MARCA
 Nombre: [BRAND_NAME]. Tono: seguro, con estética propia, sin "¡OFERTA!" en mayúsculas. Paleta: fondo neutro (blanco roto o negro, elegir uno), tipografía editorial de moda, fotografía de producto como protagonista absoluto.
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Fotografía de producto a página completa o media pantalla, nunca thumbnails chicos apretados. Grilla de colección con ritmo (no todos los productos del mismo tamaño — alternar anchos para dar sensación editorial, como un lookbook). Tipografía de precios discreta, nunca en rojo gritón ni tachada sin razón real.
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav (logo + Colección + Carrito) → Hero de campaña (foto + nombre de colección) → Grilla de productos (foto grande + nombre + precio) → Producto individual (galería + selector de talle/color + agregar al carrito) → Historia de la marca breve → Footer con envíos/devoluciones.
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero de campaña: foto de la colección actual a página completa, nombre de la colección superpuesto en tipografía editorial.
 2. Grilla de productos: cada producto con su foto (proporción vertical, tipo lookbook), nombre y precio debajo, sin descripciones largas en la grilla.
 3. Producto individual: galería de 3-4 fotos, nombre, precio, selector de talle/color, botón agregar al carrito, descripción breve de materiales.
 4. Historia de marca: 2-3 oraciones, sin storytelling forzado tipo "nuestra pasión por la moda nació en...".
 
-COMPONENTS
+COMPONENTES
 Botón de agregar al carrito: sólido, esquinas rectas o casi rectas (nunca pill completo — se siente más fashion con bordes definidos). Selector de talle: chips rectangulares, el seleccionado con fondo sólido.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Nombres de producto simples y directos (material + prenda, ej. "Camisa de lino cruda"), sin adjetivos de venta forzada. Precios siempre claros, sin "desde" ambiguos si el producto tiene precio único.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 En mobile la grilla de productos pasa a 2 columnas manteniendo la proporción vertical de las fotos (nunca recortar a cuadrado). La galería de producto individual se desliza horizontalmente con swipe.
 
-ANIMATIONS
+ANIMACIONES
 Fade-in suave en las fotos al cargar. Zoom leve al hover sobre producto en desktop (no en mobile, donde no hay hover real). Transición suave al cambiar de foto en la galería del producto.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste 4.5:1 en precios y textos funcionales (el nombre del producto sobre foto necesita overlay si va superpuesto). Selector de talle/color navegable por teclado con estado de foco visible.
 
 SEO
 Title y meta description por producto si tiene su propia URL. Schema.org Product con precio, disponibilidad y marca. Open Graph con la foto principal de cada producto.
 
-PERFORMANCE
+RENDIMIENTO
 Fotografía de producto en WebP/AVIF con compresión que preserve textura y color reales (crítico en moda — un color mal representado genera devoluciones). Dimensiones explícitas, lazy loading en la grilla.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 Schema.org Product en JSON-LD. Carrito persistente (localStorage como mínimo para un MVP, o el sistema de ecommerce que se use).
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿Las fotos de producto se ven premium o genéricas? ¿El precio y el talle se encuentran sin buscar? ¿La grilla tiene ritmo editorial o es una cuadrícula aburrida de tienda genérica?`,
     },
     {

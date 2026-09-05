@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const blackStudio: Template = {
   slug: "black-studio",
   name: "Black Studio",
-  category: "Agencies",
-  style: "Editorial / Dark / Minimal",
-  tags: ["Agency", "Editorial", "Dark", "Minimal"],
+  category: "Agencias",
+  style: "Editorial / Oscuro / Minimalista",
+  tags: ["Agencia", "Editorial", "Oscuro", "Minimalista"],
   status: "ready",
   featured: true,
   previewImage: "/templates/black-studio/cover.jpg",
@@ -17,59 +17,59 @@ export const blackStudio: Template = {
       title: "Prompt Maestro — Black Studio",
       description:
         "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Art Director + Frontend Engineer especializado en sitios editoriales de estudios creativos, con el nivel de Pentagram, Locomotive o Résumé.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [AGENCY_NAME], un estudio de [DISCIPLINA: branding / diseño web / producción audiovisual / lo que corresponda]. Reemplazá cada corchete con mi información real antes de generar nada; si un dato no te lo doy, dejalo marcado como [FALTA: ...] en vez de inventarlo.
 
-OBJECTIVE
+OBJETIVO
 Que un cliente potencial entienda en 5 segundos qué tipo de trabajo hace el estudio con solo ver dos proyectos, y sienta que está frente a un equipo con criterio, no frente a una agencia genérica de "soluciones digitales".
 
-TARGET AUDIENCE
+AUDIENCIA
 Directores de marketing y fundadores de marca que ya vieron 20 sitios de agencias esta semana y descartan en dos segundos los que se ven a "plantilla".
 
-BRAND
+MARCA
 Nombre: [AGENCY_NAME]. Tono: seguro, seco, sin adjetivos vacíos ("innovador", "disruptivo"). El estudio deja que el trabajo hable. Paleta: blanco o negro puro como fondo (elegí uno y quedate ahí, no alternés secciones oscuras y claras porque sí), un único acento que aparece solo en los links y el cursor custom.
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Tipografía como layout: los títulos ocupan el ancho completo de la pantalla en tamaños de 8-14vw, no hay "hero image" tradicional — el titular ES el hero. Grilla editorial estricta (12 columnas, gouttières angostas). Muchísimo blanco/negro de sobra: el 60% de cada viewport puede estar vacío a propósito.
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav minimal (solo logo + "Trabajo" + "Contacto", sin menú de 8 items) → Statement de una línea a página completa → Grilla de proyectos (cada uno ocupa un viewport entero, imagen + nombre + categoría, nada más) → Sobre el estudio (un párrafo, no una lista de "nuestros valores") → Clientes en texto plano, sin logos → Contacto directo (mail grande, no formulario) → Footer mínimo.
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Statement: una frase que define la filosofía del estudio, en tipografía gigante, centrada o alineada a un borde, con scroll indicator sutil abajo.
 2. Proyectos: uno por viewport completo. Al hacer scroll, la imagen del proyecto anterior se aleja (scale down + fade) mientras entra la siguiente — transición de "cambio de diapositiva editorial", no un carrusel.
 3. Sobre el estudio: un párrafo de 3-4 oraciones, tipografía grande, sin foto de equipo genérica de stock.
 4. Clientes: nombres en texto plano, en una fila que se puede leer como una lista, sin logos ni tarjetas.
 5. Contacto: el mail del estudio en tipografía enorme, clickeable, con un "o escribinos por WhatsApp" como alternativa chica debajo.
 
-COMPONENTS
+COMPONENTES
 No hay botones tradicionales: los links son subrayado que se anima al hover (underline que crece desde un lado). No hay cards con sombra ni bordes redondeados — todo es rectangular, a sangre.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Frases cortas, afirmativas, sin signos de exclamación. Nunca "creemos que", siempre la afirmación directa. El nombre de cada proyecto va solo con el nombre del cliente y una palabra de categoría (ej. "Branding", "Sitio web") — nada de descripciones largas.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 En mobile la tipografía gigante baja a un tamaño que siga ocupando el ancho pero sea legible (usar clamp() con vw y un mínimo/máximo en rem, nunca un tamaño fijo en vw sin clamp). Los proyectos siguen siendo un viewport completo cada uno, sin recortar la imagen de forma que pierda el encuadre original.
 
-ANIMATIONS
+ANIMACIONES
 Solo dos: el cambio entre proyectos al hacer scroll (descripto arriba) y el underline animado en los links. Nada de parallax, nada de texto que entra letra por letra — eso contradice la sobriedad editorial del template.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste máximo (blanco puro sobre negro puro o viceversa) así que el mínimo de 4.5:1 se cumple naturalmente; cuidar que el acento de los links también pase ese mínimo sobre el fondo elegido.
 
 SEO
 Title con el nombre del estudio + la disciplina en 6 palabras. Open Graph con una imagen de proyecto real, no un logo. Cada proyecto, si tiene su propia URL, con su propio title/description.
 
-PERFORMANCE
+RENDIMIENTO
 Las imágenes de proyecto son el peso principal de esta página: servir en WebP/AVIF, con dimensiones explícitas, y cargar solo la primera a full-res de entrada — el resto con lazy loading a medida que se acercan al viewport.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 HTML semántico, cada proyecto como su propia <section>, transición de scroll hecha con CSS (scroll-snap + transform) antes de recurrir a JavaScript si el navegador lo permite.
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿La tipografía se lee como layout o parece un título de blog con font-size grande? ¿Hay al menos un 40% de espacio vacío en cada viewport? ¿Sacarías esto por una agencia genérica de plantilla o se nota que hay una dirección de arte real?`,
     },
     {

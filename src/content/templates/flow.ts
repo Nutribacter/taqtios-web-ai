@@ -4,8 +4,8 @@ export const flow: Template = {
   slug: "flow",
   name: "Flow",
   category: "SaaS",
-  style: "Clean / Modern",
-  tags: ["SaaS", "Clean", "Modern"],
+  style: "Limpio / Moderno",
+  tags: ["SaaS", "Limpio", "Moderno"],
   status: "ready",
   featured: false,
   previewImage: "/templates/flow/cover.jpg",
@@ -16,28 +16,28 @@ export const flow: Template = {
       type: "master",
       title: "Prompt Maestro — Flow",
       description: "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en landings de SaaS de productividad, con el nivel de Notion, Linear o Superhuman.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [PRODUCT_NAME], un producto de [DESCRIBIR: gestión de proyectos / CRM / notas de equipo / lo que corresponda]. Reemplazá cada corchete con mi información real; si un dato falta, dejalo como [FALTA: ...] en vez de inventarlo.
 
-OBJECTIVE
+OBJETIVO
 Que un equipo que hoy usa 3 herramientas distintas para lo que hace [PRODUCT_NAME] entienda por qué consolidar ahí, y arranque una prueba gratis sin fricción.
 
-TARGET AUDIENCE
+AUDIENCIA
 Managers de equipos chicos/medianos (5-50 personas) cansados de que la info esté repartida entre Slack, planillas y otra herramienta a medio usar.
 
-BRAND
+MARCA
 Nombre: [PRODUCT_NAME]. Tono: claro, amable, sin jerga técnica. Paleta: fondo blanco o casi blanco, UN color de marca vivo pero no chillón, mucho aire entre secciones — la sensación es de orden, que es literalmente lo que vende el producto.
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Nada de screenshots de producto crudos y comprimidos: usar mockups limpios (browser frame simple, o ilustraciones planas del flujo) que se vean nítidos a cualquier tamaño. Composición con mucho espacio en blanco — el ritmo visual tiene que transmitir la misma calma que promete el producto.
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav (logo + Producto + Precios + CTA) → Hero con mockup de producto + propuesta clara → Barra de logos de clientes → El problema en 3 viñetas breves → Cómo funciona en 3 pasos con mockup por paso → Integraciones (logos de herramientas con las que conecta) → Testimonio o caso breve → Precios → FAQ → CTA final.
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero: headline que nombra el resultado ("Todo tu equipo, un solo lugar"), subheadline de una oración, CTA "Empezar gratis" + "Ver demo", mockup de producto limpio al lado o abajo.
 2. El problema: 3 viñetas cortas sobre lo que hoy duele (info dispersa, reuniones de status, nadie sabe en qué está el otro).
 3. Cómo funciona: 3 pasos, cada uno con su propio mockup chico mostrando esa parte del producto.
@@ -45,31 +45,31 @@ PAGE STRUCTURE
 5. Precios: 2-3 planes simples, sin letra chica escondida.
 6. FAQ: preguntas reales sobre seguridad, migración de datos, cancelación.
 
-COMPONENTS
+COMPONENTES
 Botón primario: color de marca sólido, radio de 8-10px, sombra muy sutil. Cards de "el problema" con ícono lineal simple + texto, sin bordes duros. Mockups dentro de un frame de navegador simplificado (barra superior con 3 puntos, sin URL real).
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Cada beneficio se nombra por el resultado, no por la feature ("Dejá de perseguir gente por Slack" en vez de "Notificaciones automáticas"). CTA en imperativo corto.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 En mobile el mockup del hero baja debajo del texto. Los 3 pasos de "cómo funciona" se apilan verticalmente, cada mockup mantiene su nitidez (nunca comprimido a un tamaño ilegible).
 
-ANIMATIONS
+ANIMACIONES
 Fade-up sutil al entrar cada sección. Los mockups pueden tener una animación muy leve de "datos que se actualizan" (un número que cambia, una barra que se completa) para dar sensación de producto vivo, sin exagerar.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste 4.5:1 mínimo en todo texto, especialmente el color de marca sobre blanco si es un tono claro (verificar, ajustar a un tono más oscuro para texto si hace falta).
 
 SEO
 Title y meta description específicos del producto. Open Graph con el mockup del hero. Schema.org SoftwareApplication si corresponde publicar precio.
 
-PERFORMANCE
+RENDIMIENTO
 Los mockups como SVG o imágenes livianas optimizadas — nunca screenshots reales pesados sin comprimir. Lazy loading debajo del fold.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 HTML semántico, CSS con custom properties para el color de marca (fácil de recolorear).
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿El headline nombra un resultado o solo una feature? ¿Los mockups se ven nítidos y profesionales? ¿La sensación general es de calma y orden, coherente con lo que vende el producto?`,
     },
     {

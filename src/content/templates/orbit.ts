@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const orbit: Template = {
   slug: "orbit",
   name: "Orbit",
-  category: "Professionals",
-  style: "Modern / B2B",
-  tags: ["Professional", "Modern", "B2B", "Consultant"],
+  category: "Profesionales",
+  style: "Moderno / B2B",
+  tags: ["Profesional", "Moderno", "B2B", "Consultora"],
   status: "ready",
   featured: false,
   previewImage: "/templates/orbit/cover.jpg",
@@ -16,28 +16,28 @@ export const orbit: Template = {
       type: "master",
       title: "Prompt Maestro — Orbit",
       description: "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en landings B2B de consultoras y empresas de servicios profesionales, con el nivel de las mejores boutiques de consultoría.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [CONSULTANCY_NAME], una consultora/empresa de servicios en [ÁREA: estrategia, tecnología, finanzas, legal, etc.]. Reemplazá cada corchete con mi información real; nunca inventes clientes, casos ni resultados.
 
-OBJECTIVE
+OBJETIVO
 Que un director o gerente que evalúa contratar un servicio profesional entienda en segundos qué problema resuelve [CONSULTANCY_NAME] y agende una llamada — la credibilidad es la conversión, no la emoción.
 
-TARGET AUDIENCE
+AUDIENCIA
 Tomadores de decisión (gerentes, directores, fundadores) que evalúan pocas opciones con cuidado, y para quienes un sitio con errores o genérico es una señal de alerta.
 
-BRAND
+MARCA
 Nombre: [CONSULTANCY_NAME]. Tono: profesional, seguro, sin jerga vacía de consultoría ("sinergias", "disrupción"). Paleta: neutra y sobria (azul marino, gris carbón, blanco), un acento discreto.
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Composición ordenada tipo B2B serio: nada de ilustraciones juguetonas ni gradientes llamativos. Los números de los casos de éxito son el elemento visual más fuerte de la página (tipografía grande, clara). Fotografía si se usa, del equipo real o del trabajo, nunca stock genérico de "gente sonriendo en una oficina".
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav (logo + Servicios + Casos + Contacto) → Hero con propuesta clara + CTA a agendar llamada → Servicios (3-4 áreas con una línea cada una) → Casos de éxito (2-3, con número real + qué se hizo) → Cómo trabajamos (proceso en pasos) → Equipo (fotos reales + rol, sin biografías largas) → Contacto (formulario corto o link a agendar).
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero: headline que nombra el resultado que buscan los clientes ("Reducimos tu costo operativo, no tu calidad"), CTA "Agendar una llamada".
 2. Servicios: 3-4 áreas, cada una con un título y una línea de qué incluye — sin listas eternas de sub-servicios.
 3. Casos de éxito: 2-3 casos reales, cada uno con el número de resultado (ej. "+30% en eficiencia") y una oración de qué se hizo — nunca inventar el número.
@@ -45,31 +45,31 @@ PAGE STRUCTURE
 5. Equipo: fotos reales + nombre + rol, sin relleno de biografía genérica.
 6. Contacto: formulario corto (nombre, empresa, email, mensaje) o link directo a agendar una reunión.
 
-COMPONENTS
+COMPONENTES
 Botón CTA: sólido, sobrio, sin efectos llamativos. Cards de servicio y de caso de éxito con borde fino, sin sombras exageradas — el tono es serio, no juguetón.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Cada afirmación se sostiene con un dato o se formula como pregunta que el cliente reconoce, nunca un adjetivo sin sustento ("somos los mejores"). Los casos de éxito con número real siempre, nunca "resultados excepcionales" sin cifra.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 En mobile los casos de éxito mantienen su número grande como elemento principal, con el texto de contexto debajo. El formulario de contacto con inputs de altura táctil cómoda.
 
-ANIMATIONS
+ANIMACIONES
 Fade-up sutil al entrar cada sección. Los números de los casos de éxito pueden contar desde 0 al valor real al entrar en viewport, una sola vez. Nada más — este template no necesita movimiento vistoso, necesita transmitir solidez.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste 4.5:1 en todo texto. Formulario de contacto completamente accesible por teclado con labels asociados a cada input.
 
 SEO
 Title: "[CONSULTANCY_NAME] — [ÁREA]". Meta description con la propuesta de valor concreta. Schema.org ProfessionalService si aplica.
 
-PERFORMANCE
+RENDIMIENTO
 Página liviana por naturaleza (poco contenido visual pesado) — cuidar igual las fotos de equipo si las hay, con dimensiones explícitas.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 HTML semántico, formulario de contacto con validación básica del lado del cliente antes de enviar.
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿Cada afirmación tiene un dato detrás o es una frase vacía? ¿Los casos de éxito usan números reales? ¿El sitio transmite solidez o parece una landing genérica de agencia de marketing?`,
     },
     {

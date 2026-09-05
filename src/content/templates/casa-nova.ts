@@ -3,9 +3,9 @@ import type { Template } from "./types";
 export const casaNova: Template = {
   slug: "casa-nova",
   name: "Casa Nova",
-  category: "Hospitality",
-  style: "Warm Premium",
-  tags: ["Hospitality", "Boutique Hotel", "Warm Premium"],
+  category: "Hotelería",
+  style: "Cálido Premium",
+  tags: ["Hotelería", "Hotel Boutique", "Cálido Premium"],
   status: "ready",
   featured: false,
   previewImage: "/templates/casa-nova/cover.jpg",
@@ -16,28 +16,28 @@ export const casaNova: Template = {
       type: "master",
       title: "Prompt Maestro — Casa Nova",
       description: "El prompt principal: genera la landing completa. Pegalo primero, siempre.",
-      content: `ROLE
+      content: `ROL
 Sos un Senior Product Designer + Frontend Engineer especializado en sitios de hotelería boutique, con el nivel de las mejores plataformas de alojamientos independientes premium.
 
-CONTEXT
+CONTEXTO
 Voy a construir la landing de [PROPERTY_NAME], un [DESCRIBIR: hotel boutique, posada, alojamiento tipo Airbnb premium] en [UBICACIÓN]. Reemplazá cada corchete con mi información real; nunca inventes precios, capacidad ni servicios.
 
-OBJECTIVE
+OBJETIVO
 Que quien está buscando dónde alojarse sienta la calidez y el nivel del lugar con la fotografía, y reserve directo (sin pagar la comisión de una plataforma intermediaria si el dueño quiere evitarla).
 
-TARGET AUDIENCE
+AUDIENCIA
 Viajeros que buscan algo con identidad propia, no una cadena hotelera genérica — comparan fotos y reseñas antes de decidir.
 
-BRAND
+MARCA
 Nombre: [PROPERTY_NAME]. Tono: cálido, personal, como si el dueño te estuviera contando del lugar. Paleta: tonos cálidos (terracota, crema, madera), tipografía serif suave para títulos + sans para información práctica (precios, disponibilidad).
 
-DESIGN DIRECTION
+DIRECCIÓN DE DISEÑO
 Fotografía de espacios como protagonista absoluto: habitaciones, vistas, desayuno, pileta — cada una mostrada grande, con composición que transmita la experiencia de estar ahí. Ritmo de secciones que alterna foto grande + texto breve, nunca un muro de texto largo.
 
-INFORMATION ARCHITECTURE
+ARQUITECTURA DE INFORMACIÓN
 Nav (logo + Habitaciones + Reservar) → Hero con foto del lugar + nombre + ubicación → Habitaciones/espacios (cada uno con foto, capacidad, precio por noche) → Experiencia (desayuno, amenities, actividades cercanas) → Reseñas reales si existen → Disponibilidad/reserva (calendario simple o link a WhatsApp/mail) → Ubicación con mapa.
 
-PAGE STRUCTURE
+ESTRUCTURA DE PÁGINA
 1. Hero: foto del lugar (fachada, vista o espacio más representativo) a página completa, nombre + ubicación superpuestos.
 2. Habitaciones: cada tipo con foto grande, capacidad, qué incluye y precio por noche.
 3. Experiencia: fotos de desayuno/amenities/actividades cercanas, con texto breve por cada una.
@@ -45,31 +45,31 @@ PAGE STRUCTURE
 5. Reserva: fechas disponibles o un CTA directo a WhatsApp/mail para consultar, con precios claros.
 6. Ubicación: mapa + 2-3 líneas sobre la zona.
 
-COMPONENTS
+COMPONENTES
 Botón de reservar: cálido, sólido, esquinas suaves (coherente con la calidez del lugar). Cards de habitación con foto grande arriba y datos abajo, sin sobrecargar con íconos innecesarios.
 
-COPY DIRECTION
+DIRECCIÓN DE COPY
 Descripciones concretas de cada espacio (qué se ve desde la ventana, qué incluye el desayuno), en tono personal, como quien recomienda su propio lugar.
 
-RESPONSIVE RULES
+REGLAS RESPONSIVE
 En mobile las fotos de habitación mantienen su encuadre completo. La info de precio y capacidad se lee clara sin superponerse al texto de la foto.
 
-ANIMATIONS
+ANIMACIONES
 Fade-up suave al entrar cada sección. Zoom muy leve en la foto del hero (scale 1 a 1.04, lento) para dar vida sin distraer.
 
-ACCESSIBILITY
+ACCESIBILIDAD
 Contraste 4.5:1 en todo texto sobre foto (usar overlay de gradiente). Calendario de disponibilidad (si lo hay) navegable por teclado.
 
 SEO
 Title: "[PROPERTY_NAME] — [TIPO_DE_ALOJAMIENTO] en [UBICACIÓN]". Schema.org tipo Hotel o LodgingBusiness con dirección, rango de precios y amenities.
 
-PERFORMANCE
+RENDIMIENTO
 Fotografía de espacios optimizada en WebP/AVIF, dimensiones explícitas, lazy loading debajo del fold salvo el hero.
 
-TECHNICAL REQUIREMENTS
+REQUISITOS TÉCNICOS
 Schema.org Hotel/LodgingBusiness en JSON-LD. Si hay reseñas reales, sumar aggregateRating solo con datos verificables.
 
-FINAL QA
+CONTROL DE CALIDAD FINAL
 ¿Las fotos transmiten ganas de ir? ¿El precio por noche se encuentra sin buscar? ¿El tono se siente personal y cálido, no corporativo?`,
     },
     {
