@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/*
+ * Paleta: misma familia que la marca TAQTIOS (agencia), pero desaturada y
+ * pensada para producto self-service premium (Linear/Stripe/Vercel), no para
+ * la landing oscura/neon de la agencia. Ver AGENTS.md, sección "Identidad visual".
+ */
+:root {
+  --background: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f3f2f6;
+  --border: rgba(23, 21, 32, 0.1);
+  --foreground: #17151f;
+  --foreground-dim: #5b5766;
+  --accent: #6d5bd0;
+  --accent-2: #2e8fc4;
+  --accent-foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-foreground-dim: var(--foreground-dim);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-sora);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121218;
+    --surface: #1a1a22;
+    --surface-2: #21212b;
+    --border: rgba(255, 255, 255, 0.1);
+    --foreground: #f3f2f7;
+    --foreground-dim: #a5a2b0;
+    --accent: #9c8ff0;
+    --accent-2: #57b4e8;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.brand-gradient-text {
+  background-image: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
