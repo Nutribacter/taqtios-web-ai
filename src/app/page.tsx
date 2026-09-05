@@ -137,7 +137,7 @@ export default function Home() {
                     </svg>
                   )}
                   <div className="neu-raised h-full rounded-2xl p-6">
-                    <div className="neu-pressed grid h-12 w-12 place-items-center rounded-full text-primary">
+                    <div className="glass-tint grid h-12 w-12 place-items-center rounded-full text-primary">
                       <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor">
                         {STEP_ICONS[s.icon]}
                       </svg>

@@ -171,6 +171,35 @@
   transform: translateY(0) scale(0.96);
   transition-duration: 0.08s;
 }
+
+/*
+ * Glassmorphism: vidrio esmerilado — translúcido, con blur de lo que queda
+ * atrás y un filo de luz arriba. Es la técnica genérica (Apple/Fluent, la
+ * misma idea detrás de cualquier ejemplo de la web), reimplementada acá con
+ * CSS 100% propio — no el de ningún CodePen puntual.
+ * .glass = vidrio neutro, para superficies fijas que flotan sobre contenido
+ * (el header al scrollear, el menú mobile). .glass-tint = la misma idea con
+ * el violeta de marca adentro, para insignias/íconos.
+ */
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.16));
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 28px -10px rgba(31, 29, 45, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.glass-tint {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary) 24%, white 76%),
+    color-mix(in srgb, var(--primary) 6%, white 94%)
+  );
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  border: 1px solid color-mix(in srgb, var(--primary) 32%, white 68%);
+  box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--primary) 35%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
 /*
  ---break---
  */

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function SiteNav() {
   return (
-    <header className="border-b border-border">
+    <header className="glass sticky top-0 z-30">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="whitespace-nowrap font-heading text-base font-extrabold tracking-tight sm:text-lg">
           TAQTios <span className="brand-gradient-text">Web AI</span>
@@ -38,7 +38,7 @@ export function SiteNav() {
                 <path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </summary>
-            <nav className="neu-raised absolute right-0 z-20 mt-2 w-44 rounded-xl p-2 text-sm font-medium text-muted-foreground">
+            <nav className="glass absolute right-0 z-20 mt-2 w-44 rounded-xl p-2 text-sm font-medium text-muted-foreground">
               <Link href="/templates" className="block rounded-lg px-3 py-2 transition hover:text-foreground">
                 Templates
               </Link>
