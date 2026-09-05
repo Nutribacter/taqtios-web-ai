@@ -18,6 +18,14 @@ const ALL_FILTERS = [
   "Hospitality",
   "Startups",
   "Landing Pages",
+  "Healthcare",
+  "Education",
+  "Personal Brand",
+  "Finance",
+  "Beauty",
+  "Automotive",
+  "Construction",
+  "Creative Studios",
 ];
 
 export default async function TemplatesPage({

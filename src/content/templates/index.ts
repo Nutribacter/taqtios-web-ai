@@ -9,6 +9,11 @@ import { velvet } from "./velvet";
 import { pulse } from "./pulse";
 import { casaNova } from "./casa-nova";
 import { orbit } from "./orbit";
+import { launchpad } from "./launchpad";
+import { spark } from "./spark";
+import { vital } from "./vital";
+import { aula } from "./aula";
+import { signature } from "./signature";
 
 /**
  * Registro de templates. Agregar uno nuevo = crear su archivo (copiando el
@@ -25,6 +30,11 @@ const ALL_TEMPLATES: Template[] = [
   pulse,
   casaNova,
   orbit,
+  launchpad,
+  spark,
+  vital,
+  aula,
+  signature,
 ];
 
 /** Solo los que ya tienen sus 6 prompts completos y reales. */
