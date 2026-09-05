@@ -14,6 +14,11 @@ import { spark } from "./spark";
 import { vital } from "./vital";
 import { aula } from "./aula";
 import { signature } from "./signature";
+import { ledger } from "./ledger";
+import { bloom } from "./bloom";
+import { torque } from "./torque";
+import { cimiento } from "./cimiento";
+import { prisma } from "./prisma";
 
 /**
  * Registro de templates. Agregar uno nuevo = crear su archivo (copiando el
@@ -35,6 +40,11 @@ const ALL_TEMPLATES: Template[] = [
   vital,
   aula,
   signature,
+  ledger,
+  bloom,
+  torque,
+  cimiento,
+  prisma,
 ];
 
 /** Solo los que ya tienen sus 6 prompts completos y reales. */
