@@ -31,7 +31,7 @@ export default async function DashboardPage() {
               </p>
               <Link
                 href="/pricing"
-                className="mt-4 inline-block rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+                className="mt-4 inline-block rounded-lg btn-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
               >
                 Obtener acceso
               </Link>
@@ -58,7 +58,7 @@ export default async function DashboardPage() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/library"
-              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
+              className="rounded-lg btn-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
             >
               Explorar biblioteca
             </Link>

@@ -47,7 +47,7 @@ export default async function PricingPage() {
             {hasAccess ? (
               <Link
                 href="/dashboard"
-                className="mt-8 block rounded-lg bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground hover:opacity-90"
+                className="mt-8 block rounded-lg btn-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground"
               >
                 Ya tenés acceso — ir al dashboard
               </Link>
@@ -56,7 +56,7 @@ export default async function PricingPage() {
                 <form action="/api/checkout" method="post">
                   <button
                     type="submit"
-                    className="w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"
+                    className="w-full rounded-lg btn-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
                   >
                     Obtener acceso
                   </button>
@@ -67,7 +67,7 @@ export default async function PricingPage() {
                 <Magnet padding={20} magnetStrength={5} wrapperClassName="mt-8 block">
                   <Link
                     href="/signup?redirect=/pricing"
-                    className="block rounded-lg bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground hover:opacity-90"
+                    className="block rounded-lg btn-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground"
                   >
                     Crear cuenta y comprar
                   </Link>

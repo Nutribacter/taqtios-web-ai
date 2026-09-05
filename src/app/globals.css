@@ -132,6 +132,45 @@
   background: var(--card);
   box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
 }
+
+/*
+ * Botón principal, versión 2: el violeta sólido plano se sentía "chillón y
+ * sin efectos" (feedback directo). Ahora es un degradado violeta→celeste
+ * (nunca un bloque de un solo tono) con un halo difuminado detrás — la
+ * misma idea del glow de un toggle, propia, no el CSS de nadie — que se
+ * enciende al hover, más un rebote real al hacer click (CSS puro, sin JS).
+ * Reemplaza "bg-primary ... hover:opacity-90" en todos los CTA principales.
+ */
+.btn-primary {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(135deg, var(--primary), var(--brand-2));
+  box-shadow: 0 8px 22px -8px color-mix(in srgb, var(--primary) 55%, transparent);
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 60%, transparent), transparent 72%);
+  filter: blur(18px);
+  opacity: 0.5;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -6px color-mix(in srgb, var(--primary) 65%, transparent);
+}
+.btn-primary:hover::before {
+  opacity: 0.85;
+  filter: blur(22px);
+}
+.btn-primary:active {
+  transform: translateY(0) scale(0.96);
+  transition-duration: 0.08s;
+}
 /*
  ---break---
  */

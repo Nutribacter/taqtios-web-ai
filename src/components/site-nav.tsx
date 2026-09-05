@@ -27,7 +27,7 @@ export function SiteNav() {
           </Link>
           <Link
             href="/pricing"
-            className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+            className="rounded-lg btn-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
           >
             Obtener acceso
           </Link>

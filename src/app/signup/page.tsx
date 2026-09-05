@@ -50,7 +50,7 @@ export default async function SignupPage({
             </div>
             <button
               type="submit"
-              className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
+              className="w-full rounded-lg btn-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
             >
               Crear cuenta
             </button>

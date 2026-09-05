@@ -76,7 +76,7 @@ export default function Home() {
             <Magnet padding={30} magnetStrength={4}>
               <Link
                 href="/templates"
-                className="block w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 sm:w-auto"
+                className="block w-full rounded-lg btn-primary px-6 py-3 text-sm font-semibold text-primary-foreground sm:w-auto"
               >
                 Explorar templates
               </Link>
@@ -201,7 +201,7 @@ export default function Home() {
             <Magnet padding={30} magnetStrength={4} wrapperClassName="mt-8 inline-block">
               <Link
                 href="/pricing"
-                className="block rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"
+                className="block rounded-lg btn-primary px-8 py-3 text-sm font-semibold text-primary-foreground"
               >
                 Obtener acceso
               </Link>
@@ -235,7 +235,7 @@ export default function Home() {
             <Magnet padding={30} magnetStrength={4} wrapperClassName="mt-8 inline-block">
               <Link
                 href="/templates"
-                className="block rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"
+                className="block rounded-lg btn-primary px-8 py-3 text-sm font-semibold text-primary-foreground"
               >
                 Explorar templates
               </Link>
