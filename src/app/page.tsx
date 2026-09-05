@@ -59,12 +59,12 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero */}
         <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 text-center sm:pt-28">
-          <h1 className="font-heading text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl">
+          <h1 className="font-heading text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl">
             <BlurText text="Creá webs que parecen" delay={60} className="justify-center" />
             <BlurText
               text="de miles de dólares"
               delay={60}
-              className="justify-center"
+              className="justify-center italic font-medium"
               spanClassName="brand-gradient-text"
             />
           </h1>

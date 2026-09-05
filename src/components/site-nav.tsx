@@ -4,7 +4,7 @@ export function SiteNav() {
   return (
     <header className="border-b border-border">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-heading text-lg font-extrabold tracking-tight">
+        <Link href="/" className="whitespace-nowrap font-heading text-base font-extrabold tracking-tight sm:text-lg">
           TAQTios <span className="brand-gradient-text">Web AI</span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
