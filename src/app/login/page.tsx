@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { GoogleSignInButton } from "@/components/GoogleSignInButton";
 import { login } from "./actions";
 
 export default async function LoginPage({
@@ -16,6 +17,15 @@ export default async function LoginPage({
       <main className="flex flex-1 items-center justify-center px-6 py-16">
         <div className="w-full max-w-sm">
           <h1 className="font-heading text-2xl font-extrabold">Ingresar</h1>
+
+          <div className="mt-6">
+            <GoogleSignInButton redirectTo={redirect} />
+          </div>
+          <div className="mt-6 flex items-center gap-3 text-xs text-muted-foreground">
+            <span className="h-px flex-1 bg-border" />
+            o con tu email
+            <span className="h-px flex-1 bg-border" />
+          </div>
 
           {error && (
             <p className="mt-4 rounded-lg bg-red-500/10 p-3 text-sm text-red-600">
