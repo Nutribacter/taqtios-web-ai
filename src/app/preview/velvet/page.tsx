@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 /**
  * Preview en vivo del template Velvet (Ecommerce / Fashion / Luxury). Mundo
  * visual propio: negro puro, grilla editorial asimétrica, tipografía fina.
  * Marca de ejemplo ficticia ("Ocre").
+ *
+ * Animaciones: fade-in de las fotos, zoom leve al hover (solo desktop) —
+ * lo que pide el propio Prompt Maestro de este template.
  */
 const PRODUCTS = [
   { name: "Camisa de lino cruda", price: "$42.000", big: true },
@@ -38,24 +42,26 @@ export default function VelvetPreview() {
         </h1>
       </section>
 
-      {/* Grilla de productos, ritmo asimétrico */}
-      <section className="mx-auto grid max-w-5xl grid-cols-2 gap-4 px-6 py-16 sm:grid-cols-4">
+      {/* Grilla de productos, ritmo asimétrico, fade-in + zoom al hover */}
+      <ScrollReveal className="mx-auto grid max-w-5xl grid-cols-2 gap-4 px-6 py-16 sm:grid-cols-4">
         {PRODUCTS.map((p) => (
           <div key={p.name} className={p.big ? "col-span-2 row-span-2" : "col-span-1"}>
-            <div className="aspect-[3/4] bg-[#1A1A1A]" />
+            <div className="aspect-[3/4] overflow-hidden">
+              <div className="h-full w-full bg-[#1A1A1A] transition-transform duration-300 [@media(hover:hover)]:hover:scale-[1.03]" />
+            </div>
             <p className="mt-2 text-sm font-medium">{p.name}</p>
             <p className="text-sm text-white/50">{p.price}</p>
           </div>
         ))}
-      </section>
+      </ScrollReveal>
 
       {/* Historia de marca */}
-      <section className="border-t border-white/10 px-6 py-20 text-center">
+      <ScrollReveal className="border-t border-white/10 px-6 py-20 text-center">
         <p className="mx-auto max-w-md text-white/60">
           Ocre nació en 2021 con una idea simple: ropa bien hecha, en pocas
           telas, que dure más de una temporada.
         </p>
-      </section>
+      </ScrollReveal>
 
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/30">
         © 2026 Ocre — ejemplo de contenido para el template Velvet.

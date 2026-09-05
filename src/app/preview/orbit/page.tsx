@@ -1,13 +1,19 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { CountUp } from "@/components/CountUp";
 
 /**
  * Preview en vivo del template Orbit (Professional / Modern / B2B). Mundo
  * visual propio: azul marino + gris carbón, sobrio. Consultora de ejemplo
  * ficticia ("Vertex Partners").
+ *
+ * Animaciones: fade-up por sección, los números de los casos de éxito
+ * cuentan al entrar en viewport — lo que pide el propio Prompt Maestro,
+ * nada más (la sobriedad depende de la quietud, no del movimiento).
  */
 const CASES = [
-  { metric: "+30%", desc: "Eficiencia operativa en 6 meses — cliente de logística" },
-  { metric: "-18%", desc: "Costo de adquisición — cliente de retail" },
+  { prefix: "+", value: "30", suffix: "%", desc: "Eficiencia operativa en 6 meses — cliente de logística" },
+  { prefix: "-", value: "18", suffix: "%", desc: "Costo de adquisición — cliente de retail" },
 ];
 
 export default function OrbitPreview() {
@@ -27,7 +33,7 @@ export default function OrbitPreview() {
           <span>Casos</span>
           <span>Contacto</span>
         </nav>
-        <button className="rounded-md bg-[#12172B] px-4 py-2 text-sm font-semibold text-white">
+        <button className="rounded-md bg-[#12172B] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90">
           Agendar llamada
         </button>
       </header>
@@ -39,12 +45,12 @@ export default function OrbitPreview() {
         <p className="mx-auto mt-4 max-w-lg text-black/60">
           Consultoría de operaciones para empresas de 50 a 500 personas.
         </p>
-        <button className="mt-8 rounded-md bg-[#12172B] px-6 py-3 text-sm font-semibold text-white">
+        <button className="mt-8 rounded-md bg-[#12172B] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
           Agendar una llamada
         </button>
       </section>
 
-      <section className="border-t border-black/10 px-6 py-16">
+      <ScrollReveal className="border-t border-black/10 px-6 py-16">
         <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-3">
           {["Estrategia operativa", "Reducción de costos", "Transformación digital"].map((s) => (
             <div key={s}>
@@ -55,26 +61,30 @@ export default function OrbitPreview() {
             </div>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
 
       <section className="border-t border-black/10 px-6 py-20">
         <h2 className="mx-auto max-w-4xl text-2xl font-bold">Casos de éxito</h2>
         <div className="mx-auto mt-8 grid max-w-4xl gap-8 sm:grid-cols-2">
-          {CASES.map((c) => (
-            <div key={c.metric} className="rounded-lg border border-black/10 p-6">
-              <p className="text-4xl font-bold text-[#12172B]">{c.metric}</p>
-              <p className="mt-2 text-sm text-black/60">{c.desc}</p>
-            </div>
+          {CASES.map((c, i) => (
+            <ScrollReveal key={c.desc} delay={i * 0.1}>
+              <div className="rounded-lg border border-black/10 p-6">
+                <p className="text-4xl font-bold text-[#12172B]">
+                  <CountUp value={c.value} prefix={c.prefix} suffix={c.suffix} />
+                </p>
+                <p className="mt-2 text-sm text-black/60">{c.desc}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
-      <section className="border-t border-black/10 px-6 py-20 text-center">
+      <ScrollReveal className="border-t border-black/10 px-6 py-20 text-center">
         <h2 className="text-2xl font-bold">¿Hablamos de tu operación?</h2>
-        <button className="mt-6 rounded-md bg-[#12172B] px-6 py-3 text-sm font-semibold text-white">
+        <button className="mt-6 rounded-md bg-[#12172B] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
           Agendar llamada
         </button>
-      </section>
+      </ScrollReveal>
 
       <footer className="border-t border-black/10 px-6 py-8 text-center text-xs text-black/30">
         © 2026 Vertex Partners — ejemplo de contenido para el template Orbit.

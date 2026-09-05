@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 /**
  * Preview en vivo del template Pulse (Fitness / Bold / Energetic). Mundo
  * visual propio: fondo casi negro, acento naranja vibrante, tipografía
  * gruesa en mayúsculas. Box de ejemplo ficticio ("FORJA").
+ *
+ * Animaciones: entrada rápida por sección, cards de disciplina con empuje
+ * al hover — lo que pide el propio Prompt Maestro de este template.
  */
 const CLASSES = [
   { name: "Funcional", level: "Todos los niveles", dur: "45 min" },
@@ -27,7 +31,7 @@ export default function PulsePreview() {
           <span>Clases</span>
           <span>Horarios</span>
         </nav>
-        <button className="rounded bg-[#FF5A1F] px-5 py-2 text-sm font-bold uppercase">
+        <button className="rounded bg-[#FF5A1F] px-5 py-2 text-sm font-bold uppercase transition hover:brightness-110">
           Clase de prueba
         </button>
       </header>
@@ -38,7 +42,7 @@ export default function PulsePreview() {
           <h1 className="text-5xl font-black uppercase leading-none sm:text-7xl">
             Entrená<br />en serio
           </h1>
-          <button className="mt-6 rounded bg-[#FF5A1F] px-8 py-3 text-sm font-bold uppercase">
+          <button className="mt-6 rounded bg-[#FF5A1F] px-8 py-3 text-sm font-bold uppercase transition hover:brightness-110">
             Reservá tu clase de prueba
           </button>
         </div>
@@ -47,11 +51,13 @@ export default function PulsePreview() {
       <section className="mx-auto max-w-5xl px-6 py-20">
         <h2 className="text-2xl font-black uppercase">Disciplinas</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {CLASSES.map((c) => (
-            <div key={c.name} className="rounded-lg border border-white/10 p-5">
-              <h3 className="text-lg font-bold">{c.name}</h3>
-              <p className="mt-1 text-sm text-white/50">{c.level} · {c.dur}</p>
-            </div>
+          {CLASSES.map((c, i) => (
+            <ScrollReveal key={c.name} delay={i * 0.06}>
+              <div className="rounded-lg border border-white/10 p-5 transition-all duration-150 hover:-translate-y-1 hover:border-[#FF5A1F]/40 hover:shadow-lg hover:shadow-black/40">
+                <h3 className="text-lg font-bold">{c.name}</h3>
+                <p className="mt-1 text-sm text-white/50">{c.level} · {c.dur}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -60,7 +66,10 @@ export default function PulsePreview() {
         <h2 className="text-2xl font-black uppercase">Horarios de hoy</h2>
         <div className="mt-6 space-y-2">
           {["07:00 · Funcional", "09:00 · Movilidad", "18:00 · Fuerza", "19:30 · Funcional"].map((h) => (
-            <div key={h} className="flex items-center justify-between border-b border-white/10 py-2 text-sm">
+            <div
+              key={h}
+              className="flex items-center justify-between border-b border-white/10 py-2 text-sm transition-colors hover:bg-white/[0.03]"
+            >
               <span>{h}</span>
               <span className="font-bold text-[#FF5A1F]">Reservar</span>
             </div>

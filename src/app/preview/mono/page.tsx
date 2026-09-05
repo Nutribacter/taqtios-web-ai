@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 /**
  * Preview en vivo del template Mono (Portfolio / Minimal / Editorial).
  * Mundo visual propio: monocromo, una sola columna, sin decoración.
  * Diseñadora de ejemplo ficticia ("Lucía Ferro").
+ *
+ * Animaciones: fade-up de 12-16px al entrar cada proyecto, y NADA MÁS —
+ * es literalmente lo único que pide el Prompt Maestro de este template.
  */
 const PROJECTS = [
   {
@@ -49,13 +53,15 @@ export default function MonoPreview() {
         </section>
 
         <section className="space-y-16">
-          {PROJECTS.map((p) => (
-            <article key={p.title}>
-              <div className="aspect-[16/10] w-full bg-black/5" />
-              <h2 className="mt-4 text-xl font-semibold">{p.title}</h2>
-              <p className="mt-1 text-black/70">{p.desc}</p>
-              <p className="mt-2 text-sm text-black/40">{p.role}</p>
-            </article>
+          {PROJECTS.map((p, i) => (
+            <ScrollReveal key={p.title} delay={i * 0.05}>
+              <article>
+                <div className="aspect-[16/10] w-full bg-black/5" />
+                <h2 className="mt-4 text-xl font-semibold">{p.title}</h2>
+                <p className="mt-1 text-black/70">{p.desc}</p>
+                <p className="mt-2 text-sm text-black/40">{p.role}</p>
+              </article>
+            </ScrollReveal>
           ))}
         </section>
 
