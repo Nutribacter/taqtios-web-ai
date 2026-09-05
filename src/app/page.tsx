@@ -94,7 +94,7 @@ export default function Home() {
         </section>
 
         {/* Cómo funciona */}
-        <section className="border-t border-border bg-muted/40">
+        <section className="border-t border-border">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <h2 className="font-heading text-2xl font-bold sm:text-3xl">
               De idea a web en minutos.
@@ -134,10 +134,10 @@ export default function Home() {
                 <TiltedCard containerHeight="auto" rotateAmplitude={6}>
                   <Link
                     href={`/templates/${t.slug}`}
-                    className="group block overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:shadow-xl"
+                    className="neu-raised group block overflow-hidden rounded-2xl p-2"
                   >
-                    <div className="aspect-video bg-muted" />
-                    <div className="p-5">
+                    <div className="neu-pressed aspect-video overflow-hidden rounded-xl" />
+                    <div className="p-4">
                       <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                         {t.category}
                       </p>
@@ -156,7 +156,7 @@ export default function Home() {
         </section>
 
         {/* Qué incluye */}
-        <section className="border-t border-border bg-muted/40 py-20">
+        <section className="border-t border-border py-20">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="font-heading text-2xl font-bold sm:text-3xl">
               Qué incluye el acceso
@@ -176,7 +176,7 @@ export default function Home() {
             {AUDIENCE.map((a) => (
               <span
                 key={a}
-                className="rounded-full border border-border px-4 py-2 text-sm font-medium text-muted-foreground"
+                className="neu-raised-sm rounded-full px-4 py-2 text-sm font-medium text-muted-foreground"
               >
                 {a}
               </span>
@@ -185,7 +185,7 @@ export default function Home() {
         </section>
 
         {/* Pricing teaser */}
-        <section className="border-t border-border bg-muted/40">
+        <section className="border-t border-border">
           <div className="mx-auto max-w-2xl px-6 py-20 text-center">
             <h2 className="font-heading text-2xl font-bold sm:text-3xl">
               Acceso fundador

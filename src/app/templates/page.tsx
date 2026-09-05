@@ -65,7 +65,7 @@ export default async function TemplatesPage({
               name="q"
               defaultValue={q}
               placeholder="Buscá un template…"
-              className="w-full rounded-lg border border-border bg-card px-4 py-3 text-sm outline-none focus:border-primary sm:max-w-sm"
+              className="neu-pressed w-full rounded-lg px-4 py-3 text-sm outline-none sm:max-w-sm"
             />
             {categoria !== "Todos" && (
               <input type="hidden" name="categoria" value={categoria} />
@@ -85,12 +85,12 @@ export default async function TemplatesPage({
                       : `/templates?categoria=${encodeURIComponent(c)}`
                   }
                   aria-disabled={isDisabled}
-                  className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${
+                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
                     isActive
-                      ? "border-primary bg-primary text-primary-foreground"
+                      ? "neu-pressed text-primary"
                       : isDisabled
-                        ? "pointer-events-none border-border text-muted-foreground/40"
-                        : "border-border text-muted-foreground hover:border-primary hover:text-foreground"
+                        ? "pointer-events-none text-muted-foreground/40"
+                        : "neu-raised-sm text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {c}
@@ -111,10 +111,10 @@ export default async function TemplatesPage({
                   <TiltedCard containerHeight="auto" rotateAmplitude={6}>
                     <Link
                       href={`/templates/${t.slug}`}
-                      className="group block overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:shadow-xl"
+                      className="neu-raised group block overflow-hidden rounded-2xl p-2"
                     >
-                      <div className="aspect-video bg-muted" />
-                      <div className="p-5">
+                      <div className="neu-pressed aspect-video overflow-hidden rounded-xl" />
+                      <div className="p-4">
                         <div className="flex items-center justify-between">
                           <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                             {t.category}

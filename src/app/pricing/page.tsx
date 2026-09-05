@@ -28,7 +28,7 @@ export default async function PricingPage() {
             Un solo pago. Sin suscripción.
           </p>
 
-          <SpotlightCard className="mt-10 p-8 text-left">
+          <SpotlightCard className="neu-raised mt-10 p-8 text-left">
             <p className="font-heading text-5xl font-extrabold">
               ${finalPriceArs().toLocaleString("es-AR")}
               <span className="text-lg font-medium text-muted-foreground"> ARS</span>

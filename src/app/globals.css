@@ -20,10 +20,15 @@
  */
 :root {
   --border: oklch(0.922 0 0);
-  --background: oklch(1 0 0);
+  /* Base neumórfica: no puro blanco — el "material tallado" necesita que la
+     tarjeta y la página sean del MISMO color, la sombra doble hace todo el
+     trabajo de diferenciarlas. Ver .neu-raised / .neu-pressed más abajo. */
+  --background: #EFEEF3;
   --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
+  --card: #EFEEF3;
   --card-foreground: oklch(0.145 0 0);
+  --neu-light: rgba(255, 255, 255, 0.85);
+  --neu-dark: rgba(163, 163, 190, 0.4);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: #6d5bd0;
@@ -103,6 +108,29 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/*
+ * Sistema neumórfico: "tallado del mismo material" — la tarjeta es del
+ * mismo color que la página, y una sombra doble (clara arriba-izquierda,
+ * oscura abajo-derecha) simula volumen real, sin borde ni degradado.
+ * .neu-raised = elevado (cards, botones, el panel del menú mobile).
+ * .neu-pressed = hundido (inputs, buscador — el dato "vive en un hueco").
+ * Transición suave para que hover/focus se sientan táctiles, no un salto.
+ */
+.neu-raised {
+  background: var(--card);
+  box-shadow: 8px 8px 16px var(--neu-dark), -8px -8px 16px var(--neu-light);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.neu-raised-sm {
+  background: var(--card);
+  box-shadow: 4px 4px 8px var(--neu-dark), -4px -4px 8px var(--neu-light);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.neu-pressed {
+  background: var(--card);
+  box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
 }
 /*
  ---break---
