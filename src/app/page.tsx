@@ -9,28 +9,7 @@ import TiltedCard from "@/components/TiltedCard";
 import MagicBento from "@/components/MagicBento";
 import FoldText from "@/components/FoldText";
 import { ScrollReveal } from "@/components/ScrollReveal";
-
-const STEP_ICONS = {
-  choose: (
-    <path d="M9 3 4 8.5 9 14M4 8.5h11a5 5 0 0 1 5 5V16" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  ),
-  copy: (
-    <path d="M8 8V4.8A1.8 1.8 0 0 1 9.8 3h6.4A1.8 1.8 0 0 1 18 4.8v6.4a1.8 1.8 0 0 1-1.8 1.8H13M4.8 8h6.4A1.8 1.8 0 0 1 13 9.8v6.4a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 16.2V9.8A1.8 1.8 0 0 1 4.8 8Z" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  ),
-  paste: (
-    <path d="M7 3.5h6l1 2h2A1.5 1.5 0 0 1 17.5 7v10A1.5 1.5 0 0 1 16 18.5H6A1.5 1.5 0 0 1 4.5 17V7A1.5 1.5 0 0 1 6 5.5h2l-1-2ZM8 11h6M8 14.5h4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  ),
-  wand: (
-    <path d="m5 17 9-9M14.5 3.5 16 5M17 8l1.5 1.5M3.5 12.5 5 14M3 3l1.2 1.2M17.8 15.8 19 17" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  ),
-} as const;
-
-const STEPS = [
-  { n: "01", icon: "choose", title: "Elegí", body: "Recorré la biblioteca y encontrá el diseño que se parece a lo que querés construir." },
-  { n: "02", icon: "copy", title: "Copiá", body: "Cada template trae su Prompt Maestro: el brief completo de diseño listo para pegar." },
-  { n: "03", icon: "paste", title: "Pegá", body: "Lo pegás en Claude, Qwen, Lovable, Cursor o Gemini — tu herramienta, tu cuenta." },
-  { n: "04", icon: "wand", title: "Personalizá", body: "Los prompts de branding, copy y SEO lo dejan con tu marca, tus textos, tu contenido." },
-] as const;
+import { StepsShowcase } from "@/components/StepsShowcase";
 
 const TOOLS = ["Claude", "Qwen", "Lovable", "Cursor", "Gemini"];
 
@@ -124,35 +103,7 @@ export default function Home() {
               color="var(--foreground)"
               className="font-heading"
             />
-            <div className="relative mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {STEPS.map((s, i) => (
-                <ScrollReveal key={s.n} delay={i * 0.1} className="relative">
-                  {i < STEPS.length - 1 && (
-                    <svg
-                      className="pointer-events-none absolute top-9 -right-3 hidden w-6 text-muted-foreground/40 lg:block"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path d="M4 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  )}
-                  <div className="neu-raised h-full rounded-2xl p-6">
-                    <div className="glass-tint grid h-12 w-12 place-items-center rounded-full text-primary">
-                      <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor">
-                        {STEP_ICONS[s.icon]}
-                      </svg>
-                    </div>
-                    <span className="mt-4 block font-heading text-sm font-bold text-muted-foreground/60">
-                      {s.n}
-                    </span>
-                    <h3 className="mt-1 font-heading text-lg font-bold">
-                      {s.title}
-                    </h3>
-                    <p className="mt-1.5 text-sm text-muted-foreground">{s.body}</p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
+            <StepsShowcase />
           </div>
         </section>
 

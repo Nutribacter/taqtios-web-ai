@@ -200,6 +200,49 @@
   box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--primary) 35%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
+
+/*
+ * Reticula que selecciona el paso activo: mismo lenguaje visual que un
+ * corner-bracket de autofoco de cámara (la idea del "Target Cursor" de React
+ * Bits), pero acá NO sigue al mouse — avanza sola de tarjeta en tarjeta.
+ * Implementación propia: posicionada relativa al contenedor de la grilla
+ * (no fixed al viewport, que es como sigue al cursor real), ver
+ * StepsShowcase.tsx.
+ */
+.step-target-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--primary);
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--primary) 55%, transparent));
+}
+.step-target-corner-tl {
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 4px;
+}
+.step-target-corner-tr {
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 4px;
+}
+.step-target-corner-br {
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 4px;
+}
+.step-target-corner-bl {
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 4px;
+}
+.step-card-active {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px -14px color-mix(in srgb, var(--primary) 45%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
 /*
  ---break---
  */
@@ -236,6 +279,21 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+.dark .glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 28px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.dark .glass-tint {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary) 30%, transparent),
+    color-mix(in srgb, var(--primary) 10%, transparent)
+  );
+  border: 1px solid color-mix(in srgb, var(--primary) 40%, transparent);
+  box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--primary) 45%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 /*
  ---break---
