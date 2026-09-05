@@ -4,12 +4,28 @@ import { blackStudio } from "./black-studio";
 import { casa } from "./casa";
 import { primeEstate } from "./prime-estate";
 import { mono } from "./mono";
+import { flow } from "./flow";
+import { velvet } from "./velvet";
+import { pulse } from "./pulse";
+import { casaNova } from "./casa-nova";
+import { orbit } from "./orbit";
 
 /**
  * Registro de templates. Agregar uno nuevo = crear su archivo (copiando el
  * patrón de nova-ai.ts) + sumarlo acá. No hace falta tocar ninguna pantalla.
  */
-const ALL_TEMPLATES: Template[] = [novaAi, blackStudio, casa, primeEstate, mono];
+const ALL_TEMPLATES: Template[] = [
+  novaAi,
+  blackStudio,
+  casa,
+  primeEstate,
+  mono,
+  flow,
+  velvet,
+  pulse,
+  casaNova,
+  orbit,
+];
 
 /** Solo los que ya tienen sus 6 prompts completos y reales. */
 export function listReadyTemplates(): Template[] {
