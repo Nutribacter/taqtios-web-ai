@@ -20,10 +20,10 @@ const STEP_ICONS = {
 } as const;
 
 const STEPS = [
-  { n: "01", icon: "choose", title: "Elegí", body: "Recorré la biblioteca y encontrá el diseño que se parece a lo que querés construir." },
-  { n: "02", icon: "copy", title: "Copiá", body: "Cada template trae su Prompt Maestro: el brief completo de diseño listo para pegar." },
-  { n: "03", icon: "paste", title: "Pegá", body: "Lo pegás en Claude, Qwen, Lovable, Cursor o Gemini — tu herramienta, tu cuenta." },
-  { n: "04", icon: "wand", title: "Personalizá", body: "Los prompts de branding, copy y SEO lo dejan con tu marca, tus textos, tu contenido." },
+  { n: "01", icon: "choose", title: "Elegí", body: "Encontrá el diseño que se parece a lo que querés construir." },
+  { n: "02", icon: "copy", title: "Copiá", body: "El Prompt Maestro: el brief completo, listo para pegar." },
+  { n: "03", icon: "paste", title: "Pegá", body: "En Claude, Qwen, Lovable, Cursor o Gemini — tu herramienta." },
+  { n: "04", icon: "wand", title: "Personalizá", body: "Branding, copy y SEO — con tu marca y tu contenido." },
 ] as const;
 
 const CORNERS = ["tl", "tr", "br", "bl"] as const;
@@ -119,20 +119,24 @@ export function StepsShowcase() {
             ref={(el) => {
               cardRefs.current[i] = el;
             }}
-            className={`glass h-full rounded-2xl p-6 transition-transform duration-500 ${active === i ? "step-card-active" : ""}`}
+            className={`glass-liquid h-full rounded-2xl p-6 transition-transform duration-500 ${active === i ? "step-card-active" : ""}`}
           >
-            <div className="glass-tint grid h-12 w-12 place-items-center rounded-full text-primary">
-              <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor">
-                {STEP_ICONS[s.icon]}
-              </svg>
+            <div className="flex items-center gap-3">
+              <div className="glass-tint grid h-12 w-12 shrink-0 place-items-center rounded-full text-primary">
+                <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor">
+                  {STEP_ICONS[s.icon]}
+                </svg>
+              </div>
+              <div>
+                <span className="block font-heading text-xs font-bold text-muted-foreground/60">
+                  {s.n}
+                </span>
+                <h3 className="font-heading text-lg font-bold uppercase tracking-wide">
+                  {s.title}
+                </h3>
+              </div>
             </div>
-            <span className="mt-4 block font-heading text-sm font-bold text-muted-foreground/60">
-              {s.n}
-            </span>
-            <h3 className="mt-1 font-heading text-lg font-bold uppercase tracking-wide">
-              {s.title}
-            </h3>
-            <p className="mt-1.5 text-sm text-muted-foreground">{s.body}</p>
+            <p className="mt-4 text-sm text-muted-foreground">{s.body}</p>
           </div>
         </ScrollReveal>
       ))}
