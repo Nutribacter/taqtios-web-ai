@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { CountUp } from "@/components/CountUp";
 
 /**
  * Preview en vivo del template Torque (Automotor / Agresivo / Metálico).
  * Mundo visual propio: casi negro, acento rojo, composición diagonal.
  * Taller de ejemplo ficticio ("APEX Performance").
+ *
+ * Animaciones: los specs cuentan desde 0, entrada rápida por sección — lo
+ * que pide el propio Prompt Maestro (este template es rápido en todo).
  */
 export default function TorquePreview() {
   return (
@@ -17,7 +22,7 @@ export default function TorquePreview() {
 
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <span className="text-lg font-black uppercase tracking-tight">APEX Performance</span>
-        <button className="bg-[#E4213B] px-5 py-2 text-sm font-bold uppercase">Cotizar</button>
+        <button className="bg-[#E4213B] px-5 py-2 text-sm font-bold uppercase transition hover:brightness-110">Cotizar</button>
       </header>
 
       <section className="relative mx-6 h-[60vh] overflow-hidden bg-[#1A1A1A]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)" }}>
@@ -28,15 +33,21 @@ export default function TorquePreview() {
           </h1>
           <div className="mt-4 flex gap-8 font-mono">
             <div>
-              <p className="text-3xl font-bold text-[#E4213B]">420 HP</p>
+              <p className="text-3xl font-bold text-[#E4213B]">
+                <CountUp value="420" suffix=" HP" duration={600} />
+              </p>
               <p className="text-xs uppercase text-white/50">Potencia</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-[#E4213B]">4.2s</p>
+              <p className="text-3xl font-bold text-[#E4213B]">
+                <CountUp value="4.2" suffix="s" duration={600} />
+              </p>
               <p className="text-xs uppercase text-white/50">0-100</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-[#E4213B]">560 Nm</p>
+              <p className="text-3xl font-bold text-[#E4213B]">
+                <CountUp value="560" suffix=" Nm" duration={600} />
+              </p>
               <p className="text-xs uppercase text-white/50">Torque</p>
             </div>
           </div>
@@ -51,21 +62,23 @@ export default function TorquePreview() {
             ["Tracción", "AWD"],
             ["Peso", "1.480 kg"],
             ["Velocidad máx.", "280 km/h"],
-          ].map(([k, v]) => (
-            <div key={k} className="border border-white/10 p-4">
-              <p className="text-xs uppercase text-white/40">{k}</p>
-              <p className="mt-1 text-lg font-bold">{v}</p>
-            </div>
+          ].map(([k, v], i) => (
+            <ScrollReveal key={k} delay={i * 0.05}>
+              <div className="border border-white/10 p-4 transition-colors hover:border-[#E4213B]/50">
+                <p className="text-xs uppercase text-white/40">{k}</p>
+                <p className="mt-1 text-lg font-bold">{v}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
-      <section className="border-t border-white/10 px-6 py-16 text-center">
+      <ScrollReveal className="border-t border-white/10 px-6 py-16 text-center">
         <p className="text-2xl font-black uppercase">Reservá tu turno de prueba</p>
-        <button className="mt-6 bg-[#E4213B] px-8 py-3 text-sm font-bold uppercase">
+        <button className="mt-6 bg-[#E4213B] px-8 py-3 text-sm font-bold uppercase transition hover:brightness-110">
           Cotizar ahora
         </button>
-      </section>
+      </ScrollReveal>
 
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/30">
         © 2026 APEX Performance — ejemplo de contenido para el template Torque.

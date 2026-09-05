@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 /**
  * Preview en vivo del template Spark (Landing Pages / Punchy / Conversion).
  * Mundo visual propio: blanco con un acento fuerte, CTA repetido. Producto
  * de ejemplo ficticio ("Guion en 7 días").
+ *
+ * Animaciones: fade-up por sección, pulso sutil SOLO en el CTA del hero
+ * (el propio prompt pide no repetirlo en cada CTA) — nada más.
  */
 const INCLUDES = ["12 videoclases grabadas", "Plantillas editables", "Grupo privado de feedback", "Certificado"];
 const FAQ = [
@@ -28,12 +32,16 @@ export default function SparkPreview() {
         <p className="mt-4 text-lg text-black/60">
           El método paso a paso para dejar de trabarte frente a la cámara.
         </p>
-        <button className="mt-8 rounded-lg bg-[#E5484D] px-8 py-4 text-base font-bold text-white">
+        <button
+          className="mt-8 rounded-lg bg-[#E5484D] px-8 py-4 text-base font-bold text-white"
+          style={{ animation: "spark-pulse 2s ease-in-out infinite" }}
+        >
           Quiero empezar — $19.900
         </button>
+        <style>{`@keyframes spark-pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.02); } }`}</style>
       </section>
 
-      <section className="border-t border-black/10 px-6 py-12">
+      <ScrollReveal className="border-t border-black/10 px-6 py-12">
         <div className="mx-auto grid max-w-3xl gap-8 sm:grid-cols-2">
           <div>
             <p className="font-bold text-[#0F9B58]">Es para vos si...</p>
@@ -44,9 +52,9 @@ export default function SparkPreview() {
             <p className="mt-1 text-sm text-black/60">Ya tenés un proceso de guion que te funciona bien.</p>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
-      <section className="border-t border-black/10 px-6 py-16">
+      <ScrollReveal className="border-t border-black/10 px-6 py-16">
         <h2 className="mx-auto max-w-2xl text-center text-2xl font-bold">Qué incluye</h2>
         <ul className="mx-auto mt-6 max-w-md space-y-2">
           {INCLUDES.map((i) => (
@@ -56,13 +64,13 @@ export default function SparkPreview() {
           ))}
         </ul>
         <div className="mt-8 text-center">
-          <button className="rounded-lg bg-[#E5484D] px-8 py-4 text-base font-bold text-white">
+          <button className="rounded-lg bg-[#E5484D] px-8 py-4 text-base font-bold text-white transition hover:opacity-90">
             Quiero empezar — $19.900
           </button>
         </div>
-      </section>
+      </ScrollReveal>
 
-      <section className="border-t border-black/10 px-6 py-16">
+      <ScrollReveal className="border-t border-black/10 px-6 py-16">
         <h2 className="mx-auto max-w-2xl text-center text-2xl font-bold">Preguntas frecuentes</h2>
         <div className="mx-auto mt-6 max-w-2xl divide-y divide-black/10">
           {FAQ.map((f) => (
@@ -72,7 +80,7 @@ export default function SparkPreview() {
             </details>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
 
       <footer className="border-t border-black/10 px-6 py-8 text-center text-xs text-black/30">
         © 2026 Guion en 7 días — ejemplo de contenido para el template Spark.

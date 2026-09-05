@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { CountUp } from "@/components/CountUp";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 /**
  * Preview en vivo del template Launchpad (Startups / Bold / Waitlist).
  * Mundo visual propio: fondo oscuro, un solo color vibrante, foco total en
  * el formulario de email. Startup de ejemplo ficticia ("Orbita").
+ *
+ * Animaciones: pulso sutil en el botón del hero, contador de anotados que
+ * cuenta — lo que pide el propio Prompt Maestro, sin agregar nada más.
  */
 export default function LaunchpadPreview() {
   return (
@@ -31,16 +36,22 @@ export default function LaunchpadPreview() {
             placeholder="tu@email.com"
             className="rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm outline-none focus:border-[#7C5CFF] sm:w-64"
           />
-          <button className="rounded-lg bg-[#7C5CFF] px-6 py-3 text-sm font-semibold">
+          <button
+            className="rounded-lg bg-[#7C5CFF] px-6 py-3 text-sm font-semibold"
+            style={{ animation: "orbita-pulse 2s ease-in-out infinite" }}
+          >
             Sumarme a la lista
           </button>
         </div>
-        <p className="mt-4 text-sm text-white/40">+312 personas ya se anotaron</p>
+        <p className="mt-4 text-sm text-white/40">
+          +<CountUp value="312" duration={900} /> personas ya se anotaron
+        </p>
+        <style>{`@keyframes orbita-pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.03); } }`}</style>
       </div>
 
-      <div className="mx-auto max-w-2xl border-t border-white/10 py-16 text-center text-white/60">
+      <ScrollReveal className="mx-auto max-w-2xl border-t border-white/10 py-16 text-center text-white/60">
         <p>Vas a poder conectar Mercado Libre, tu local y tu tienda online en un solo tablero de stock.</p>
-      </div>
+      </ScrollReveal>
 
       <footer className="border-t border-white/10 py-8 text-center text-xs text-white/30">
         © 2026 Orbita — ejemplo de contenido para el template Launchpad.

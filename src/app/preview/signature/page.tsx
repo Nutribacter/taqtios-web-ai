@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 /**
  * Preview en vivo del template Signature (Personal Brand / Editorial /
  * Confident). Mundo visual propio: editorial, la foto manda. Persona de
  * ejemplo ficticia ("Martina Sosa").
+ *
+ * Animaciones: SOLO fade-up por sección — la seguridad del tono se
+ * transmite con quietud, tal como pide el propio Prompt Maestro.
  */
 const MEDIA = ["Forbes", "La Nación", "TEDx Rosario", "Endeavor"];
 
@@ -36,29 +40,29 @@ export default function SignaturePreview() {
           </div>
         </section>
 
-        <section className="mt-16 border-t border-black/10 pt-10">
+        <ScrollReveal className="mt-16 border-t border-black/10 pt-10">
           <p className="text-xs uppercase tracking-widest text-black/40">Como se me vio en</p>
           <div className="mt-4 flex flex-wrap gap-x-8 gap-y-3 text-black/40">
             {MEDIA.map((m) => (
               <span key={m} className="font-semibold">{m}</span>
             ))}
           </div>
-        </section>
+        </ScrollReveal>
 
-        <section className="mt-16 border-t border-black/10 pt-10">
+        <ScrollReveal className="mt-16 border-t border-black/10 pt-10">
           <p className="leading-relaxed text-black/70">
             Trabajé 9 años en desarrollo de negocios B2B antes de empezar a
             escribir sobre ventas basadas en contenido. Di más de 30 charlas
             en 5 países y ayudé a 40+ empresas a armar su primer motor de
             ventas orgánico.
           </p>
-        </section>
+        </ScrollReveal>
 
-        <section className="mt-16 border-t border-black/10 pt-10">
+        <ScrollReveal className="mt-16 border-t border-black/10 pt-10">
           <a href="mailto:hola@martinasosa.com" className="text-2xl font-bold hover:text-black/60">
             hola@martinasosa.com
           </a>
-        </section>
+        </ScrollReveal>
 
         <footer className="mt-16 text-xs text-black/30">
           © 2026 Martina Sosa — ejemplo de contenido para el template Signature.

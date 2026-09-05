@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 /**
  * Preview en vivo del template Bloom (Belleza / Suave / Elegante). Mundo
  * visual propio: pastel, formas circulares, mucho aire. Marca de ejemplo
  * ficticia ("Musgo").
+ *
+ * Animaciones: fade-in lento por sección, zoom muy leve en producto al
+ * hover — lo que pide el propio Prompt Maestro (el ritmo pausado es la
+ * identidad, nada rápido acá).
  */
 const PRODUCTS = [
   { name: "Sérum de niacinamida", price: "$8.900" },
@@ -29,33 +34,33 @@ export default function BloomPreview() {
         </nav>
       </header>
 
-      <section className="mx-auto flex max-w-4xl flex-col items-center px-6 py-12 text-center">
-        <div className="h-56 w-56 rounded-full bg-[#E8C4B8]" />
+      <ScrollReveal delay={0.1} className="mx-auto flex max-w-4xl flex-col items-center px-6 py-12 text-center">
+        <div className="h-56 w-56 rounded-full bg-[#E8C4B8] transition-transform duration-700 hover:scale-105" />
         <h1 className="mt-8 text-3xl font-semibold sm:text-4xl">Piel cuidada, sin vueltas</h1>
         <p className="mt-3 max-w-sm font-sans text-[#3D2E28]/60">
           Tres pasos, ingredientes que se entienden, resultados que se notan.
         </p>
-      </section>
+      </ScrollReveal>
 
-      <section className="mx-auto max-w-4xl px-6 py-16">
+      <ScrollReveal className="mx-auto max-w-4xl px-6 py-16">
         <h2 className="text-center text-2xl font-semibold">Nuestros productos</h2>
         <div className="mt-10 grid gap-8 sm:grid-cols-3">
           {PRODUCTS.map((p) => (
             <div key={p.name} className="text-center">
-              <div className="mx-auto aspect-square w-full max-w-[180px] rounded-full bg-[#E8C4B8]/60" />
+              <div className="mx-auto aspect-square w-full max-w-[180px] rounded-full bg-[#E8C4B8]/60 transition-transform duration-500 hover:scale-105" />
               <p className="mt-4 font-sans text-sm font-medium">{p.name}</p>
               <p className="font-sans text-sm text-[#3D2E28]/50">{p.price}</p>
             </div>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
 
-      <section className="border-t border-[#3D2E28]/10 px-6 py-16 text-center font-sans">
+      <ScrollReveal className="border-t border-[#3D2E28]/10 px-6 py-16 text-center font-sans">
         <p className="mx-auto max-w-md text-[#3D2E28]/60">
           Niacinamida para parejo la textura, ácido hialurónico para hidratar
           en profundidad, y nada más de lo que tu piel no necesita.
         </p>
-      </section>
+      </ScrollReveal>
 
       <footer className="border-t border-[#3D2E28]/10 px-6 py-8 text-center font-sans text-xs text-[#3D2E28]/40">
         © 2026 Musgo — ejemplo de contenido para el template Bloom.

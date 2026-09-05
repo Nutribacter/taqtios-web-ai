@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 /**
  * Preview en vivo del template Aula (Education / Friendly / Clear). Mundo
  * visual propio: cálido y claro, temario en acordeón. Curso de ejemplo
  * ficticio ("Excel para no contadores").
+ *
+ * Animaciones: fade-up por sección, el acordeón del temario con su ícono
+ * que rota al abrir — lo que pide el propio Prompt Maestro.
  */
 const TEMARIO = [
   { m: "Módulo 1", t: "Fórmulas que vas a usar todos los días" },
@@ -24,7 +28,7 @@ export default function AulaPreview() {
 
       <header className="mx-auto flex max-w-4xl items-center justify-between px-6 py-6">
         <span className="text-lg font-bold">Excel para no contadores</span>
-        <button className="rounded-full bg-[#D97D3F] px-5 py-2 text-sm font-semibold text-white">
+        <button className="rounded-full bg-[#D97D3F] px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90">
           Inscribirme
         </button>
       </header>
@@ -36,13 +40,16 @@ export default function AulaPreview() {
         <p className="mt-3 text-[#2E2417]/60">Para equipos de administración y ventas, sin conocimientos previos.</p>
       </section>
 
-      <section className="mx-auto max-w-2xl px-6 py-8">
+      <ScrollReveal className="mx-auto max-w-2xl px-6 py-8">
         <h2 className="text-xl font-bold">Qué vas a aprender</h2>
         <div className="mt-4 divide-y divide-[#2E2417]/10 rounded-xl border border-[#2E2417]/10 bg-white">
           {TEMARIO.map((m) => (
-            <details key={m.m} className="p-4">
-              <summary className="cursor-pointer font-semibold marker:content-none">
-                {m.m}: {m.t}
+            <details key={m.m} className="group p-4 transition-colors hover:bg-[#2E2417]/[0.02]">
+              <summary className="flex cursor-pointer items-center justify-between font-semibold marker:content-none">
+                <span>{m.m}: {m.t}</span>
+                <span className="ml-3 text-lg text-[#D97D3F] transition-transform duration-200 group-open:rotate-45">
+                  +
+                </span>
               </summary>
               <p className="mt-2 text-sm text-[#2E2417]/60">
                 Clases grabadas + ejercicio práctico descargable.
@@ -50,15 +57,15 @@ export default function AulaPreview() {
             </details>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
 
-      <section className="border-t border-[#2E2417]/10 px-6 py-16 text-center">
+      <ScrollReveal className="border-t border-[#2E2417]/10 px-6 py-16 text-center">
         <p className="text-2xl font-bold">$24.900</p>
         <p className="mt-1 text-sm text-[#2E2417]/60">Acceso de por vida + certificado</p>
-        <button className="mt-6 rounded-full bg-[#D97D3F] px-8 py-3 text-sm font-semibold text-white">
+        <button className="mt-6 rounded-full bg-[#D97D3F] px-8 py-3 text-sm font-semibold text-white transition hover:opacity-90">
           Inscribirme
         </button>
-      </section>
+      </ScrollReveal>
 
       <footer className="border-t border-[#2E2417]/10 px-6 py-8 text-center text-xs text-[#2E2417]/40">
         © 2026 Excel para no contadores — ejemplo de contenido para el template Aula.
