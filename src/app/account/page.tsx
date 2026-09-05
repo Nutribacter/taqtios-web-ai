@@ -15,13 +15,13 @@ export default async function AccountPage() {
         <div className="mx-auto max-w-lg px-6 py-16">
           <h1 className="font-heading text-3xl font-extrabold">Mi cuenta</h1>
 
-          <div className="mt-8 space-y-4 rounded-xl border border-border bg-surface p-6">
+          <div className="mt-8 space-y-4 rounded-xl border border-border bg-card p-6">
             <div>
-              <p className="text-xs uppercase tracking-wide text-foreground-dim">Email</p>
+              <p className="text-xs uppercase tracking-wide text-muted-foreground">Email</p>
               <p className="mt-1 font-medium">{email}</p>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wide text-foreground-dim">Acceso</p>
+              <p className="text-xs uppercase tracking-wide text-muted-foreground">Acceso</p>
               <p className="mt-1 font-medium">
                 {hasAccess ? "Fundador — activo" : "Sin acceso todavía"}
               </p>
@@ -31,7 +31,7 @@ export default async function AccountPage() {
           <form action={logout} className="mt-6">
             <button
               type="submit"
-              className="rounded-lg border border-border px-4 py-2 text-sm font-semibold hover:bg-surface-2"
+              className="rounded-lg border border-border px-4 py-2 text-sm font-semibold hover:bg-muted"
             >
               Cerrar sesión
             </button>

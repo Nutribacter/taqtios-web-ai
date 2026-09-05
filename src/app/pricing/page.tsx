@@ -3,6 +3,8 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { getAccessStatus } from "@/lib/access";
 import { finalPriceArs } from "@/lib/pricing";
+import SpotlightCard from "@/components/SpotlightCard";
+import Magnet from "@/components/Magnet";
 
 const INCLUDES = [
   "20 templates premium originales",
@@ -22,21 +24,21 @@ export default async function PricingPage() {
           <h1 className="font-heading text-3xl font-extrabold sm:text-4xl">
             Acceso fundador
           </h1>
-          <p className="mt-3 text-foreground-dim">
+          <p className="mt-3 text-muted-foreground">
             Un solo pago. Sin suscripción.
           </p>
 
-          <div className="mt-10 rounded-2xl border border-border bg-surface p-8 text-left">
+          <SpotlightCard className="mt-10 p-8 text-left">
             <p className="font-heading text-5xl font-extrabold">
               ${finalPriceArs().toLocaleString("es-AR")}
-              <span className="text-lg font-medium text-foreground-dim"> ARS</span>
+              <span className="text-lg font-medium text-muted-foreground"> ARS</span>
             </p>
-            <p className="mt-1 text-sm text-foreground-dim">Pago único</p>
+            <p className="mt-1 text-sm text-muted-foreground">Pago único</p>
 
             <ul className="mt-6 space-y-3">
               {INCLUDES.map((item) => (
                 <li key={item} className="flex gap-2 text-sm">
-                  <span className="text-accent">✓</span>
+                  <span className="text-primary">✓</span>
                   {item}
                 </li>
               ))}
@@ -45,28 +47,32 @@ export default async function PricingPage() {
             {hasAccess ? (
               <Link
                 href="/dashboard"
-                className="mt-8 block rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold text-accent-foreground hover:opacity-90"
+                className="mt-8 block rounded-lg bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground hover:opacity-90"
               >
                 Ya tenés acceso — ir al dashboard
               </Link>
             ) : isAuthenticated ? (
-              <form action="/api/checkout" method="post">
-                <button
-                  type="submit"
-                  className="mt-8 w-full rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90"
-                >
-                  Obtener acceso
-                </button>
-              </form>
+              <Magnet padding={20} magnetStrength={5} wrapperClassName="mt-8 block">
+                <form action="/api/checkout" method="post">
+                  <button
+                    type="submit"
+                    className="w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"
+                  >
+                    Obtener acceso
+                  </button>
+                </form>
+              </Magnet>
             ) : (
               <>
-                <Link
-                  href="/signup?redirect=/pricing"
-                  className="mt-8 block rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold text-accent-foreground hover:opacity-90"
-                >
-                  Crear cuenta y comprar
-                </Link>
-                <p className="mt-3 text-center text-xs text-foreground-dim">
+                <Magnet padding={20} magnetStrength={5} wrapperClassName="mt-8 block">
+                  <Link
+                    href="/signup?redirect=/pricing"
+                    className="block rounded-lg bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground hover:opacity-90"
+                  >
+                    Crear cuenta y comprar
+                  </Link>
+                </Magnet>
+                <p className="mt-3 text-center text-xs text-muted-foreground">
                   ¿Ya tenés cuenta?{" "}
                   <Link href="/login?redirect=/pricing" className="underline">
                     Ingresá
@@ -75,9 +81,9 @@ export default async function PricingPage() {
                 </p>
               </>
             )}
-          </div>
+          </SpotlightCard>
 
-          <p className="mt-6 text-xs text-foreground-dim">
+          <p className="mt-6 text-xs text-muted-foreground">
             Pago procesado por Mercado Pago. El acceso se habilita apenas se
             confirma el pago — no depende de que revises el mail.
           </p>

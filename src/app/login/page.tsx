@@ -31,7 +31,7 @@ export default async function LoginPage({
                 type="email"
                 name="email"
                 required
-                className="mt-1 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent"
+                className="mt-1 w-full rounded-lg border border-border bg-card px-3 py-2 text-sm outline-none focus:border-primary"
               />
             </div>
             <div>
@@ -40,22 +40,22 @@ export default async function LoginPage({
                 type="password"
                 name="password"
                 required
-                className="mt-1 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent"
+                className="mt-1 w-full rounded-lg border border-border bg-card px-3 py-2 text-sm outline-none focus:border-primary"
               />
             </div>
             <button
               type="submit"
-              className="w-full rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground hover:opacity-90"
+              className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
             >
               Ingresar
             </button>
           </form>
 
-          <p className="mt-6 text-center text-sm text-foreground-dim">
+          <p className="mt-6 text-center text-sm text-muted-foreground">
             ¿Todavía no tenés cuenta?{" "}
             <Link
               href={`/signup?redirect=${encodeURIComponent(redirect)}`}
-              className="font-medium text-accent"
+              className="font-medium text-primary"
             >
               Crear cuenta
             </Link>

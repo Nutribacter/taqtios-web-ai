@@ -24,7 +24,7 @@ export default function HelpPage() {
           <ol className="mt-10 space-y-6">
             {STEPS.map((step, i) => (
               <li key={step} className="flex gap-4">
-                <span className="font-heading text-xl font-extrabold text-accent">
+                <span className="font-heading text-xl font-extrabold text-primary">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="pt-0.5">{step}</span>

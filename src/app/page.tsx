@@ -3,6 +3,11 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { listFeaturedTemplates } from "@/content/templates";
 import { finalPriceArs } from "@/lib/pricing";
+import BlurText from "@/components/BlurText";
+import Magnet from "@/components/Magnet";
+import TiltedCard from "@/components/TiltedCard";
+import MagicBento from "@/components/MagicBento";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const STEPS = [
   { n: "01", title: "Elegí", body: "Recorré la biblioteca y encontrá el diseño que se parece a lo que querés construir." },
@@ -55,49 +60,56 @@ export default function Home() {
         {/* Hero */}
         <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 text-center sm:pt-28">
           <h1 className="font-heading text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl">
-            Creá webs que parecen{" "}
-            <span className="brand-gradient-text">de miles de dólares</span>
+            <BlurText text="Creá webs que parecen" delay={60} className="justify-center" />
+            <BlurText
+              text="de miles de dólares"
+              delay={60}
+              className="justify-center"
+              spanClassName="brand-gradient-text"
+            />
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground-dim">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             Elegí un diseño. Copiá el prompt. Pegalo en tu IA. Y construí una
             web profesional sin empezar desde cero.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href="/templates"
-              className="w-full rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90 sm:w-auto"
-            >
-              Explorar templates
-            </Link>
+            <Magnet padding={30} magnetStrength={4}>
+              <Link
+                href="/templates"
+                className="block w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 sm:w-auto"
+              >
+                Explorar templates
+              </Link>
+            </Magnet>
             <Link
               href="/help"
-              className="w-full rounded-lg border border-border px-6 py-3 text-sm font-semibold hover:bg-surface-2 sm:w-auto"
+              className="w-full rounded-lg border border-border px-6 py-3 text-sm font-semibold hover:bg-muted sm:w-auto"
             >
               Cómo funciona
             </Link>
           </div>
-          <p className="mt-8 text-xs uppercase tracking-widest text-foreground-dim">
+          <p className="mt-8 text-xs uppercase tracking-widest text-muted-foreground">
             Compatible con {TOOLS.join(" · ")}
           </p>
         </section>
 
         {/* Cómo funciona */}
-        <section className="border-t border-border bg-surface-2/40">
+        <section className="border-t border-border bg-muted/40">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <h2 className="font-heading text-2xl font-bold sm:text-3xl">
               De idea a web en minutos.
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {STEPS.map((s) => (
-                <div key={s.n}>
-                  <span className="font-heading text-3xl font-bold text-accent">
+              {STEPS.map((s, i) => (
+                <ScrollReveal key={s.n} delay={i * 0.08}>
+                  <span className="font-heading text-3xl font-bold text-primary">
                     {s.n}
                   </span>
                   <h3 className="mt-3 font-heading text-lg font-bold">
                     {s.title}
                   </h3>
-                  <p className="mt-1 text-sm text-foreground-dim">{s.body}</p>
-                </div>
+                  <p className="mt-1 text-sm text-muted-foreground">{s.body}</p>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -111,63 +123,47 @@ export default function Home() {
             </h2>
             <Link
               href="/templates"
-              className="text-sm font-semibold text-accent hover:opacity-80"
+              className="text-sm font-semibold text-primary hover:opacity-80"
             >
               Ver todos →
             </Link>
           </div>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((t) => (
-              <Link
-                key={t.slug}
-                href={`/templates/${t.slug}`}
-                className="group overflow-hidden rounded-xl border border-border bg-surface transition hover:shadow-lg"
-              >
-                <div className="aspect-video bg-surface-2" />
-                <div className="p-5">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                    {t.category}
-                  </p>
-                  <h3 className="mt-1 font-heading text-lg font-bold">
-                    {t.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-foreground-dim">
-                    {t.style}
-                  </p>
-                </div>
-              </Link>
+            {featured.map((t, i) => (
+              <ScrollReveal key={t.slug} delay={i * 0.06}>
+                <TiltedCard containerHeight="auto" rotateAmplitude={6}>
+                  <Link
+                    href={`/templates/${t.slug}`}
+                    className="group block overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:shadow-xl"
+                  >
+                    <div className="aspect-video bg-muted" />
+                    <div className="p-5">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                        {t.category}
+                      </p>
+                      <h3 className="mt-1 font-heading text-lg font-bold">
+                        {t.name}
+                      </h3>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {t.style}
+                      </p>
+                    </div>
+                  </Link>
+                </TiltedCard>
+              </ScrollReveal>
             ))}
           </div>
         </section>
 
         {/* Qué incluye */}
-        <section className="border-t border-border bg-surface-2/40">
-          <div className="mx-auto max-w-6xl px-6 py-20">
+        <section className="border-t border-border bg-muted/40 py-20">
+          <div className="mx-auto max-w-6xl px-6">
             <h2 className="font-heading text-2xl font-bold sm:text-3xl">
               Qué incluye el acceso
             </h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              <div className="rounded-xl border border-border bg-surface p-6">
-                <h3 className="font-heading text-lg font-bold">
-                  Biblioteca de templates
-                </h3>
-                <p className="mt-2 text-sm text-foreground-dim">
-                  Cada template trae Prompt Maestro, Branding, Copy,
-                  Animaciones, SEO y Responsive — seis prompts listos para
-                  usar, no uno solo genérico.
-                </p>
-              </div>
-              <div className="rounded-xl border border-border bg-surface p-6">
-                <h3 className="font-heading text-lg font-bold">
-                  Prompt Toolkit
-                </h3>
-                <p className="mt-2 text-sm text-foreground-dim">
-                  Una biblioteca aparte de prompts universales para modificar
-                  cualquier template: cambiar colores, mejorar conversión,
-                  adaptar a otro rubro, y más.
-                </p>
-              </div>
-            </div>
+          </div>
+          <div className="mt-8 flex justify-center">
+            <MagicBento />
           </div>
         </section>
 
@@ -180,7 +176,7 @@ export default function Home() {
             {AUDIENCE.map((a) => (
               <span
                 key={a}
-                className="rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground-dim"
+                className="rounded-full border border-border px-4 py-2 text-sm font-medium text-muted-foreground"
               >
                 {a}
               </span>
@@ -189,25 +185,27 @@ export default function Home() {
         </section>
 
         {/* Pricing teaser */}
-        <section className="border-t border-border bg-surface-2/40">
+        <section className="border-t border-border bg-muted/40">
           <div className="mx-auto max-w-2xl px-6 py-20 text-center">
             <h2 className="font-heading text-2xl font-bold sm:text-3xl">
               Acceso fundador
             </h2>
             <p className="mt-4 font-heading text-5xl font-extrabold">
               ${finalPriceArs().toLocaleString("es-AR")}
-              <span className="text-lg font-medium text-foreground-dim"> ARS</span>
+              <span className="text-lg font-medium text-muted-foreground"> ARS</span>
             </p>
-            <p className="mt-2 text-sm text-foreground-dim">
+            <p className="mt-2 text-sm text-muted-foreground">
               Pago único. Acceso a la biblioteca actual y a las incorporaciones
               durante la etapa de lanzamiento.
             </p>
-            <Link
-              href="/pricing"
-              className="mt-8 inline-block rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90"
-            >
-              Obtener acceso
-            </Link>
+            <Magnet padding={30} magnetStrength={4} wrapperClassName="mt-8 inline-block">
+              <Link
+                href="/pricing"
+                className="block rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"
+              >
+                Obtener acceso
+              </Link>
+            </Magnet>
           </div>
         </section>
 
@@ -222,7 +220,7 @@ export default function Home() {
                 <summary className="cursor-pointer list-none font-heading text-base font-bold marker:content-none">
                   {f.q}
                 </summary>
-                <p className="mt-2 text-sm text-foreground-dim">{f.a}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{f.a}</p>
               </details>
             ))}
           </div>
@@ -234,12 +232,14 @@ export default function Home() {
             <h2 className="font-heading text-3xl font-extrabold">
               Dejá de empezar desde una pantalla en blanco.
             </h2>
-            <Link
-              href="/templates"
-              className="mt-8 inline-block rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90"
-            >
-              Explorar templates
-            </Link>
+            <Magnet padding={30} magnetStrength={4} wrapperClassName="mt-8 inline-block">
+              <Link
+                href="/templates"
+                className="block rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"
+              >
+                Explorar templates
+              </Link>
+            </Magnet>
           </div>
         </section>
       </main>

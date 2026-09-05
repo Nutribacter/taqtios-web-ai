@@ -16,7 +16,7 @@ export default async function SignupPage({
       <main className="flex flex-1 items-center justify-center px-6 py-16">
         <div className="w-full max-w-sm">
           <h1 className="font-heading text-2xl font-extrabold">Crear cuenta</h1>
-          <p className="mt-1 text-sm text-foreground-dim">
+          <p className="mt-1 text-sm text-muted-foreground">
             Para comprar el acceso y guardar tu biblioteca.
           </p>
 
@@ -34,7 +34,7 @@ export default async function SignupPage({
                 type="email"
                 name="email"
                 required
-                className="mt-1 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent"
+                className="mt-1 w-full rounded-lg border border-border bg-card px-3 py-2 text-sm outline-none focus:border-primary"
               />
             </div>
             <div>
@@ -44,23 +44,23 @@ export default async function SignupPage({
                 name="password"
                 minLength={8}
                 required
-                className="mt-1 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none focus:border-accent"
+                className="mt-1 w-full rounded-lg border border-border bg-card px-3 py-2 text-sm outline-none focus:border-primary"
               />
-              <p className="mt-1 text-xs text-foreground-dim">Mínimo 8 caracteres.</p>
+              <p className="mt-1 text-xs text-muted-foreground">Mínimo 8 caracteres.</p>
             </div>
             <button
               type="submit"
-              className="w-full rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground hover:opacity-90"
+              className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
             >
               Crear cuenta
             </button>
           </form>
 
-          <p className="mt-6 text-center text-sm text-foreground-dim">
+          <p className="mt-6 text-center text-sm text-muted-foreground">
             ¿Ya tenés cuenta?{" "}
             <Link
               href={`/login?redirect=${encodeURIComponent(redirect)}`}
-              className="font-medium text-accent"
+              className="font-medium text-primary"
             >
               Ingresá
             </Link>
