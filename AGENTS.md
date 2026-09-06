@@ -20,6 +20,12 @@ distintos.
 ## Cómo trabajar
 - El dueño no es programador: explicar simple, tomar las decisiones técnicas
   menores sin preguntar.
+- **Para cualquier paso en un panel externo (Vercel, Supabase, Mercado Pago,
+  etc.): nunca asumir que sabe dónde está un botón o una pantalla.** Decir
+  exactamente qué tocar, con el nombre del botón/campo tal cual aparece.
+  No dar por sentado que ya vio esa pantalla antes, aunque sea la segunda vez
+  en la sesión. Pedido explícito del dueño el 6/9, con bastante enojo — no
+  repetir el error de dar un paso por "obvio".
 - Frenar a preguntar solo si es irreversible, de alto costo, de seguridad, o
   cambia el producto radicalmente.
 - **`no deployes` hasta que lo pida explícitamente** — viene repitiéndolo
@@ -180,26 +186,83 @@ sobre frictionless.
 usuario solo puede LEER sus propias compras; insert/update solo con la
 service role key (checkout y webhook).
 
-## Pendiente — de acá para adelante
-1. **Deploy a Vercel**: falta el personal access token del dueño
-   (vercel.com/account/tokens) — nada más lo bloquea.
-2. **Credenciales en `.env.local`/Vercel** (ver `.env.example`): Supabase
-   (URL + anon key + service role key), Mercado Pago, Resend.
-3. **Google Sign-In**: falta el Client ID + Client Secret de **OAuth**
-   (Google Cloud Console → Credentials → OAuth client ID, tipo "Web
-   application" — no una API key suelta) cargados en Supabase
-   (Authentication → Providers → Google) + la Authorized redirect URI que da
-   Supabase (`https://<proyecto>.supabase.co/auth/v1/callback`).
-4. Correr `supabase/migrations/0001_init.sql` en el SQL Editor del proyecto
-   real.
-5. **Landing/copy del Producto 1** (ver arriba) — no empezada. Es lo que
-   más impacto tiene para vender esta semana.
-6. Dominio: el dueño ya tiene uno en Hostinger, lo conecta él mismo en
+## ✅ ESTADO AL 6/9 — deployado y con credenciales reales, todo probado en producción
+
+**Landing del Producto 1**: hecha. Salió de `/` (antes tenía la landing del
+Producto 2) — el Producto 2 (biblioteca) se movió a `/biblioteca`, intacto.
+La home nueva vende la entrega manual por WhatsApp, con galería de los 20
+diseños y CTAs a `wa.me/549313021100`. Sin credenciales necesarias para esa
+parte.
+
+**Repo en GitHub**: `github.com/Nutribacter/taqtios-web-ai` (privado). Esto
+corrige la nota vieja de "no hay remoto" en Issue tracker más abajo.
+⚠️ El proyecto de Vercel (`nutri-of-claude/taqtios-web-ai`) **no quedó
+conectado a GitHub para auto-deploy** — la cuenta de Vercel del dueño no
+tiene enlazado GitHub como "login connection" (error: *"You need to add a
+Login Connection to your GitHub account first"* / *"No Origin namespace is
+available to install this app"*). Se deployó igual con `vercel deploy --prod`
+desde acá. Si se quiere auto-deploy en cada push, hay que resolver esa
+conexión desde la cuenta de Vercel del dueño primero (Account Settings →
+Login Connections), no es algo que se arregle desde el código.
+
+**Producción real, live en `taqtios-web-ai.vercel.app`**, con las 8 variables
+de entorno cargadas en Vercel y probadas de punta a punta:
+- Supabase (`rcuyaosfvwcylckemtgq`): registro, login y dashboard funcionando.
+  ⚠️ **"Confirm email" está APAGADO a propósito** (se apagó para poder probar
+  sin esperar mails) — decidir con el dueño si se vuelve a prender antes de
+  abrir a usuarios reales, o si se deja así (menos fricción, más riesgo de
+  mails inventados).
+- Mercado Pago con credenciales de **prueba** (`TEST-...`): checkout probado
+  end-to-end (registro → obtener acceso → redirect a MP → tarjeta de prueba
+  `5031 7557 3453 0604` / titular `APRO` / venc `11/30` / CVV `123` / DNI
+  `12345678` → aprobado). Cuando el dueño quiera cobrar de verdad: editar
+  (no agregar) `MERCADOPAGO_ACCESS_TOKEN` y `NEXT_PUBLIC_MERCADOPAGO_PUBLIC_KEY`
+  en Vercel con las credenciales de producción de MP.
+  ⚠️ `NEXT_PUBLIC_MERCADOPAGO_PUBLIC_KEY` quedó cargada con la de
+  **producción** por error de tipeo del dueño — no importa, el código todavía
+  no usa esa variable en ningún lado (Checkout Pro solo necesita el Access
+  Token del lado del servidor).
+- Resend: configurado con `onboarding@resend.dev` (el remitente de prueba
+  gratis) — cambiar por un mail del dominio propio cuando haya uno verificado
+  en Resend.
+- **Google Sign-In: funcionando en producción**, probado por el dueño en
+  Safari real. Dos trampas que costaron una vuelta cada una:
+  1. El toggle "Enable Sign in with Google" en Supabase puede quedar
+     apagado aunque los campos de Client ID/Secret estén completos y
+     guardados — hay que verificar el interruptor en sí, no solo los campos.
+  2. **Supabase Auth → URL Configuration tenía `Site URL` en
+     `http://localhost:3000`** (el default de cuando no había proyecto real
+     todavía). Sin arreglar eso, Google autenticaba bien pero el redirect
+     final volvía a localhost en la máquina del dueño ("Safari no puede
+     conectarse al servidor"). Se corrigió a `https://taqtios-web-ai.vercel.app`
+     + se agregó `https://taqtios-web-ai.vercel.app/**` a "Redirect URLs".
+     **Si se cambia de dominio en el futuro, este es el primer lugar a
+     revisar** si Google deja de funcionar.
+
+**Lo que queda, sin urgencia:**
+1. `MERCADOPAGO_WEBHOOK_SECRET`: candado extra para el webhook de MP. Hoy
+   funciona sin él (`isSignatureValid` deja pasar si no hay secret cargado,
+   ver `src/app/api/webhooks/mercadopago/route.ts`). Cargarlo cuando el dueño
+   configure el webhook en el panel de MP.
+2. Pasar Mercado Pago a producción cuando el dueño decida empezar a cobrar.
+3. Decidir si "Confirm email" de Supabase vuelve a prenderse antes de abrir
+   a usuarios reales (ver nota arriba).
+4. Resolver la conexión GitHub↔Vercel si se quiere auto-deploy (ver nota
+   arriba) — hoy cada deploy nuevo lo corre el asistente a mano con
+   `vercel deploy --prod`.
+5. Dominio: el dueño ya tiene uno en Hostinger, lo conecta él mismo en
    Vercel cuando esté listo.
-7. No se armó `/api/checkout` con reintentos ni cola — no hace falta para
+6. No se armó `/api/checkout` con reintentos ni cola — no hace falta para
    las primeras ventas, no construir esto sin medir un problema real primero.
-8. SiteSpring: ver auditoría arriba — no empezar sin señal de demanda real
+7. SiteSpring: ver auditoría arriba — no empezar sin señal de demanda real
    del Producto 1.
+
+**Credenciales usadas esta sesión — NUNCA pasadas por el chat**: todo se cargó
+directo en los paneles de Vercel/Supabase/Google/Mercado Pago/Resend por el
+dueño, siguiendo pasos explícitos del asistente (nombre exacto de cada botón/
+campo — el dueño lo pidió así explícitamente el 6/9, ver feedback en memoria).
+Verificar en Vercel → Settings → Environment Variables si hace falta
+confirmar qué hay cargado; no está escrito en ningún archivo de este repo.
 
 ## Agent skills
 
