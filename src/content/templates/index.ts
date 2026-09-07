@@ -19,6 +19,8 @@ import { bloom } from "./bloom";
 import { torque } from "./torque";
 import { cimiento } from "./cimiento";
 import { prisma } from "./prisma";
+import { dominio } from "./dominio";
+import { abogado } from "./abogado";
 
 /**
  * Registro de templates. Agregar uno nuevo = crear su archivo (copiando el
@@ -45,6 +47,8 @@ const ALL_TEMPLATES: Template[] = [
   torque,
   cimiento,
   prisma,
+  dominio,
+  abogado,
 ];
 
 /** Solo los que ya tienen sus 6 prompts completos y reales. */
