@@ -1,0 +1,4 @@
+# Fuentes de fotos/video sin procesar por rubro (fuera de public/, nunca se sirven).
+# Ya está en .gitignore, pero el CLI de Vercel no siempre respeta .gitignore
+# al empaquetar el deploy — se repite acá explícito.
+/raw-fotos/
