@@ -50,3 +50,7 @@ next-env.d.ts
 .claude-flow/data/
 .claude-flow/logs/
 .claude-flow/sessions/
+
+# Fotos originales sin optimizar de cada rubro (varios MB c/u) — el output
+# optimizado va en public/templates/<rubro>/, eso sí se commitea.
+/raw-fotos/
