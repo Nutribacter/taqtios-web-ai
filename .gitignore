@@ -54,3 +54,6 @@ next-env.d.ts
 # Fotos originales sin optimizar de cada rubro (varios MB c/u) — el output
 # optimizado va en public/templates/<rubro>/, eso sí se commitea.
 /raw-fotos/
+
+.vercel
+.env*
